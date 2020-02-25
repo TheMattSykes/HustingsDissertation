@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E49E472E24035090004E818B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E472D24035090004E818B /* AppDelegate.swift */; };
+		E49E473024035090004E818B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E472F24035090004E818B /* SceneDelegate.swift */; };
+		E49E473324035090004E818B /* Hustings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E49E473124035090004E818B /* Hustings.xcdatamodeld */; };
+		E49E473524035090004E818B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E473424035090004E818B /* ContentView.swift */; };
+		E49E473724035092004E818B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49E473624035092004E818B /* Assets.xcassets */; };
+		E49E473A24035092004E818B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49E473924035092004E818B /* Preview Assets.xcassets */; };
+		E49E473D24035092004E818B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49E473B24035092004E818B /* LaunchScreen.storyboard */; };
+		E49E474824035092004E818B /* HustingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E474724035092004E818B /* HustingsTests.swift */; };
+		E49E475324035092004E818B /* HustingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E475224035092004E818B /* HustingsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E49E474424035092004E818B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E49E472224035090004E818B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E49E472924035090004E818B;
+			remoteInfo = Hustings;
+		};
+		E49E474F24035092004E818B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E49E472224035090004E818B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E49E472924035090004E818B;
+			remoteInfo = Hustings;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E49E472A24035090004E818B /* Hustings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hustings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49E472D24035090004E818B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E49E472F24035090004E818B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E49E473224035090004E818B /* Hustings.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hustings.xcdatamodel; sourceTree = "<group>"; };
+		E49E473424035090004E818B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E49E473624035092004E818B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E49E473924035092004E818B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E49E473C24035092004E818B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E49E473E24035092004E818B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E49E474324035092004E818B /* HustingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HustingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49E474724035092004E818B /* HustingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HustingsTests.swift; sourceTree = "<group>"; };
+		E49E474924035092004E818B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E49E474E24035092004E818B /* HustingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HustingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49E475224035092004E818B /* HustingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HustingsUITests.swift; sourceTree = "<group>"; };
+		E49E475424035092004E818B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E49E472724035090004E818B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49E474024035092004E818B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49E474B24035092004E818B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E49E472124035090004E818B = {
+			isa = PBXGroup;
+			children = (
+				E49E472C24035090004E818B /* Hustings */,
+				E49E474624035092004E818B /* HustingsTests */,
+				E49E475124035092004E818B /* HustingsUITests */,
+				E49E472B24035090004E818B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E49E472B24035090004E818B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E49E472A24035090004E818B /* Hustings.app */,
+				E49E474324035092004E818B /* HustingsTests.xctest */,
+				E49E474E24035092004E818B /* HustingsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E49E472C24035090004E818B /* Hustings */ = {
+			isa = PBXGroup;
+			children = (
+				E49E473424035090004E818B /* ContentView.swift */,
+				E49E472D24035090004E818B /* AppDelegate.swift */,
+				E49E472F24035090004E818B /* SceneDelegate.swift */,
+				E49E473624035092004E818B /* Assets.xcassets */,
+				E49E473B24035092004E818B /* LaunchScreen.storyboard */,
+				E49E473E24035092004E818B /* Info.plist */,
+				E49E473124035090004E818B /* Hustings.xcdatamodeld */,
+				E49E473824035092004E818B /* Preview Content */,
+			);
+			path = Hustings;
+			sourceTree = "<group>";
+		};
+		E49E473824035092004E818B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E49E473924035092004E818B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E49E474624035092004E818B /* HustingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E49E474724035092004E818B /* HustingsTests.swift */,
+				E49E474924035092004E818B /* Info.plist */,
+			);
+			path = HustingsTests;
+			sourceTree = "<group>";
+		};
+		E49E475124035092004E818B /* HustingsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E49E475224035092004E818B /* HustingsUITests.swift */,
+				E49E475424035092004E818B /* Info.plist */,
+			);
+			path = HustingsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E49E472924035090004E818B /* Hustings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E49E475724035092004E818B /* Build configuration list for PBXNativeTarget "Hustings" */;
+			buildPhases = (
+				E49E472624035090004E818B /* Sources */,
+				E49E472724035090004E818B /* Frameworks */,
+				E49E472824035090004E818B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hustings;
+			productName = Hustings;
+			productReference = E49E472A24035090004E818B /* Hustings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E49E474224035092004E818B /* HustingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E49E475A24035092004E818B /* Build configuration list for PBXNativeTarget "HustingsTests" */;
+			buildPhases = (
+				E49E473F24035092004E818B /* Sources */,
+				E49E474024035092004E818B /* Frameworks */,
+				E49E474124035092004E818B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E49E474524035092004E818B /* PBXTargetDependency */,
+			);
+			name = HustingsTests;
+			productName = HustingsTests;
+			productReference = E49E474324035092004E818B /* HustingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E49E474D24035092004E818B /* HustingsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E49E475D24035092004E818B /* Build configuration list for PBXNativeTarget "HustingsUITests" */;
+			buildPhases = (
+				E49E474A24035092004E818B /* Sources */,
+				E49E474B24035092004E818B /* Frameworks */,
+				E49E474C24035092004E818B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E49E475024035092004E818B /* PBXTargetDependency */,
+			);
+			name = HustingsUITests;
+			productName = HustingsUITests;
+			productReference = E49E474E24035092004E818B /* HustingsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E49E472224035090004E818B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Matthew Sykes";
+				TargetAttributes = {
+					E49E472924035090004E818B = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					E49E474224035092004E818B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = E49E472924035090004E818B;
+					};
+					E49E474D24035092004E818B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = E49E472924035090004E818B;
+					};
+				};
+			};
+			buildConfigurationList = E49E472524035090004E818B /* Build configuration list for PBXProject "Hustings" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E49E472124035090004E818B;
+			productRefGroup = E49E472B24035090004E818B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E49E472924035090004E818B /* Hustings */,
+				E49E474224035092004E818B /* HustingsTests */,
+				E49E474D24035092004E818B /* HustingsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E49E472824035090004E818B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49E473D24035092004E818B /* LaunchScreen.storyboard in Resources */,
+				E49E473A24035092004E818B /* Preview Assets.xcassets in Resources */,
+				E49E473724035092004E818B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49E474124035092004E818B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49E474C24035092004E818B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E49E472624035090004E818B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49E473324035090004E818B /* Hustings.xcdatamodeld in Sources */,
+				E49E472E24035090004E818B /* AppDelegate.swift in Sources */,
+				E49E473524035090004E818B /* ContentView.swift in Sources */,
+				E49E473024035090004E818B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49E473F24035092004E818B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49E474824035092004E818B /* HustingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E49E474A24035092004E818B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49E475324035092004E818B /* HustingsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E49E474524035092004E818B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E49E472924035090004E818B /* Hustings */;
+			targetProxy = E49E474424035092004E818B /* PBXContainerItemProxy */;
+		};
+		E49E475024035092004E818B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E49E472924035090004E818B /* Hustings */;
+			targetProxy = E49E474F24035092004E818B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E49E473B24035092004E818B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49E473C24035092004E818B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E49E475524035092004E818B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E49E475624035092004E818B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E49E475824035092004E818B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Hustings/Preview Content\"";
+				DEVELOPMENT_TEAM = USPJJFZXZV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Hustings/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = matthewsykes.Hustings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E49E475924035092004E818B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Hustings/Preview Content\"";
+				DEVELOPMENT_TEAM = USPJJFZXZV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Hustings/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = matthewsykes.Hustings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E49E475B24035092004E818B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USPJJFZXZV;
+				INFOPLIST_FILE = HustingsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = matthewsykes.HustingsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hustings.app/Hustings";
+			};
+			name = Debug;
+		};
+		E49E475C24035092004E818B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USPJJFZXZV;
+				INFOPLIST_FILE = HustingsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = matthewsykes.HustingsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hustings.app/Hustings";
+			};
+			name = Release;
+		};
+		E49E475E24035092004E818B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USPJJFZXZV;
+				INFOPLIST_FILE = HustingsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = matthewsykes.HustingsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hustings;
+			};
+			name = Debug;
+		};
+		E49E475F24035092004E818B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = USPJJFZXZV;
+				INFOPLIST_FILE = HustingsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = matthewsykes.HustingsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hustings;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E49E472524035090004E818B /* Build configuration list for PBXProject "Hustings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E49E475524035092004E818B /* Debug */,
+				E49E475624035092004E818B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E49E475724035092004E818B /* Build configuration list for PBXNativeTarget "Hustings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E49E475824035092004E818B /* Debug */,
+				E49E475924035092004E818B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E49E475A24035092004E818B /* Build configuration list for PBXNativeTarget "HustingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E49E475B24035092004E818B /* Debug */,
+				E49E475C24035092004E818B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E49E475D24035092004E818B /* Build configuration list for PBXNativeTarget "HustingsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E49E475E24035092004E818B /* Debug */,
+				E49E475F24035092004E818B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E49E473124035090004E818B /* Hustings.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E49E473224035090004E818B /* Hustings.xcdatamodel */,
+			);
+			currentVersion = E49E473224035090004E818B /* Hustings.xcdatamodel */;
+			path = Hustings.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E49E472224035090004E818B /* Project object */;
+}
