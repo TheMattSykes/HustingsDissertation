@@ -16,6 +16,10 @@
 		E49E473D24035092004E818B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49E473B24035092004E818B /* LaunchScreen.storyboard */; };
 		E49E474824035092004E818B /* HustingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E474724035092004E818B /* HustingsTests.swift */; };
 		E49E475324035092004E818B /* HustingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E475224035092004E818B /* HustingsUITests.swift */; };
+		E4B4C33A240597BE002669FF /* LogoTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C339240597BE002669FF /* LogoTitleBar.swift */; };
+		E4B4C33C2405C8CE002669FF /* LogInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C33B2405C8CE002669FF /* LogInScreen.swift */; };
+		E4B4C3402405CA2D002669FF /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */; };
+		E4B4C3432405CB4B002669FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C3422405CB4B002669FF /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		E49E474E24035092004E818B /* HustingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HustingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E475224035092004E818B /* HustingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HustingsUITests.swift; sourceTree = "<group>"; };
 		E49E475424035092004E818B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4B4C339240597BE002669FF /* LogoTitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTitleBar.swift; sourceTree = "<group>"; };
+		E4B4C33B2405C8CE002669FF /* LogInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreen.swift; sourceTree = "<group>"; };
+		E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		E4B4C3422405CB4B002669FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +109,9 @@
 		E49E472C24035090004E818B /* Hustings */ = {
 			isa = PBXGroup;
 			children = (
+				E4B4C3412405CB3B002669FF /* Model */,
 				E49E473424035090004E818B /* ContentView.swift */,
+				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
 				E49E472D24035090004E818B /* AppDelegate.swift */,
 				E49E472F24035090004E818B /* SceneDelegate.swift */,
 				E49E473624035092004E818B /* Assets.xcassets */,
@@ -109,6 +119,8 @@
 				E49E473E24035092004E818B /* Info.plist */,
 				E49E473124035090004E818B /* Hustings.xcdatamodeld */,
 				E49E473824035092004E818B /* Preview Content */,
+				E4B4C33B2405C8CE002669FF /* LogInScreen.swift */,
+				E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */,
 			);
 			path = Hustings;
 			sourceTree = "<group>";
@@ -137,6 +149,14 @@
 				E49E475424035092004E818B /* Info.plist */,
 			);
 			path = HustingsUITests;
+			sourceTree = "<group>";
+		};
+		E4B4C3412405CB3B002669FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4B4C3422405CB4B002669FF /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B4C33A240597BE002669FF /* LogoTitleBar.swift in Sources */,
+				E4B4C33C2405C8CE002669FF /* LogInScreen.swift in Sources */,
 				E49E473324035090004E818B /* Hustings.xcdatamodeld in Sources */,
 				E49E472E24035090004E818B /* AppDelegate.swift in Sources */,
+				E4B4C3432405CB4B002669FF /* User.swift in Sources */,
 				E49E473524035090004E818B /* ContentView.swift in Sources */,
 				E49E473024035090004E818B /* SceneDelegate.swift in Sources */,
+				E4B4C3402405CA2D002669FF /* SignInWithApple.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
