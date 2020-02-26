@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */; };
+		C93109692405EE9A00EAE2E1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109682405EE9A00EAE2E1 /* DashboardView.swift */; };
 		E49E472E24035090004E818B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E472D24035090004E818B /* AppDelegate.swift */; };
 		E49E473024035090004E818B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49E472F24035090004E818B /* SceneDelegate.swift */; };
 		E49E473324035090004E818B /* Hustings.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E49E473124035090004E818B /* Hustings.xcdatamodeld */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOptionsView.swift; sourceTree = "<group>"; };
+		C93109682405EE9A00EAE2E1 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hustings.entitlements; sourceTree = "<group>"; };
 		E49E472A24035090004E818B /* Hustings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hustings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E472D24035090004E818B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49E472F24035090004E818B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,8 +114,11 @@
 		E49E472C24035090004E818B /* Hustings */ = {
 			isa = PBXGroup;
 			children = (
+				C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */,
 				E4B4C3412405CB3B002669FF /* Model */,
 				E49E473424035090004E818B /* ContentView.swift */,
+				C93109682405EE9A00EAE2E1 /* DashboardView.swift */,
+				C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */,
 				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
 				E49E472D24035090004E818B /* AppDelegate.swift */,
 				E49E472F24035090004E818B /* SceneDelegate.swift */,
@@ -296,6 +304,8 @@
 				E49E472E24035090004E818B /* AppDelegate.swift in Sources */,
 				E4B4C3432405CB4B002669FF /* User.swift in Sources */,
 				E49E473524035090004E818B /* ContentView.swift in Sources */,
+				C93109692405EE9A00EAE2E1 /* DashboardView.swift in Sources */,
+				C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */,
 				E49E473024035090004E818B /* SceneDelegate.swift in Sources */,
 				E4B4C3402405CA2D002669FF /* SignInWithApple.swift in Sources */,
 			);
@@ -462,11 +472,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hustings/Hustings.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hustings/Preview Content\"";
 				DEVELOPMENT_TEAM = USPJJFZXZV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Hustings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,11 +494,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hustings/Hustings.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hustings/Preview Content\"";
 				DEVELOPMENT_TEAM = USPJJFZXZV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Hustings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,7 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = USPJJFZXZV;
 				INFOPLIST_FILE = HustingsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = USPJJFZXZV;
 				INFOPLIST_FILE = HustingsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,6 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = USPJJFZXZV;
 				INFOPLIST_FILE = HustingsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,6 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = USPJJFZXZV;
 				INFOPLIST_FILE = HustingsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
