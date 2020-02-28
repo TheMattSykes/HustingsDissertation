@@ -9,21 +9,28 @@
 import SwiftUI
 
 struct DashboardView: View {
+    
+    var firstName:String
+    
     var body: some View {
-        VStack(){
-            LogoTitleBar()
-            Spacer()
-            Text("Welcome, <firstname>")
-                .font(.title)
-                .foregroundColor(Color("HustingsGreen"))
-            DashboardOptionsView()
-            Spacer()
-        }.background(Color.white)
+        NavigationView() {
+            VStack(alignment: .center){
+                LogoTitleBar()
+                Spacer()
+                Text("Welcome, \(firstName)")
+                    .font(.title)
+                    .foregroundColor(Color("HustingsGreen"))
+                DashboardOptionsView()
+                Spacer()
+            }
+        }.navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarTitle("", displayMode: .inline)
+        
     }
 }
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        DashboardView(firstName: "Name")
     }
 }

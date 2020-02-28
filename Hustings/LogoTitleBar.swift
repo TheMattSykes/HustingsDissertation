@@ -15,9 +15,9 @@ struct LogoTitleBar: View {
                 .fill(Color("HustingsGreen"))
                 .frame(height: 30)
             ZStack {
-                Rectangle()
-                    .fill(Color("HustingsGreen"))
-                    .frame(height: 10)
+//                Rectangle()
+//                    .fill(Color("HustingsGreen"))
+//                    .frame(height: 10)
                 Rectangle()
                     .fill(Color("HustingsGreen"))
                     .frame(height: 100)

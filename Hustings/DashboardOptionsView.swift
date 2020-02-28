@@ -10,26 +10,34 @@ import SwiftUI
 
 struct DashboardOptionsView: View {
     var body: some View {
-        VStack(spacing: 20) {
-            Image("LearnIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 240)
-                .padding(.horizontal,20)
-                .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
-            Image("DebateIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 240)
-                .padding(.horizontal,20)
-                .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
-            Image("ClassIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 240)
-                .padding(.horizontal,20)
-                .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
-        }
+        //NavigationView {
+            VStack(spacing: 20) {
+                NavigationLink(destination: LearnMenuView()){
+                    Image("LearnIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 240)
+                        .padding(.horizontal,20)
+                        .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                }.buttonStyle(PlainButtonStyle())
+                NavigationLink(destination: LearnMenuView()){
+                    Image("DebateIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 240)
+                        .padding(.horizontal,20)
+                        .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                }.buttonStyle(PlainButtonStyle())
+                NavigationLink(destination: LearnMenuView()){
+                    Image("ClassIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 240)
+                        .padding(.horizontal,20)
+                        .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                }.buttonStyle(PlainButtonStyle())
+        }.padding(20)
+        //}.background(Color.white)
     }
 }
 
