@@ -30,17 +30,25 @@ struct LearnMenuView: View {
                 }
 //              List(topics) { topic in
                 List {
-                    NavigationLink(destination: TopicView()) {
-                        HStack(spacing: 15) {
-                            Image(systemName: topics[0].imageName)
-                                .font(.title)
-                            Text(topics[0].name)
-                                .font(.title)
-                        }.padding(20)
+                    ForEach(topics) { topic in
+                        NavigationLink(destination: TopicView()) {
+                            HStack(spacing: 15) {
+//                                Image(systemName: topic.imageName)
+//                                    .font(.title)
+                                Image(topic.imageName)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .frame(width:100, height:100)
+                                    .overlay(Circle().stroke(Color("HustingsGreen"), lineWidth: 3))
+                                Text(topic.name)
+                                    .font(.title)
+                            }.padding(5)
+                        }
                     }
                 }
             }.navigationBarTitle("")
             .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
