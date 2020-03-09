@@ -23,22 +23,18 @@ struct LearnMenuView: View {
                     Image(systemName: "link.circle")
                         .foregroundColor((Color("HustingsGreen")))
                         .font(.largeTitle)
-                        // .fontWeight(.bold())
                     Text("Learn")
                         .font(.largeTitle)
                         .foregroundColor((Color("HustingsGreen")))
                 }
-//              List(topics) { topic in
                 List {
                     ForEach(topics) { topic in
-                        NavigationLink(destination: TopicView()) {
+                        NavigationLink(destination: InformationView(topic: topic)) {
                             HStack(spacing: 15) {
-//                                Image(systemName: topic.imageName)
-//                                    .font(.title)
                                 Image(topic.imageName)
                                     .resizable()
                                     .clipShape(Circle())
-                                    .frame(width:100, height:100)
+                                    .frame(width:60, height:60)
                                     .overlay(Circle().stroke(Color("HustingsGreen"), lineWidth: 3))
                                 Text(topic.name)
                                     .font(.title)
@@ -48,7 +44,7 @@ struct LearnMenuView: View {
                 }
             }.navigationBarTitle("")
             .navigationBarHidden(true)
-            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(StackNavigationViewStyle()).padding(0)
         }
     }
 }

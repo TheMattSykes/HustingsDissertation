@@ -14,65 +14,86 @@ struct QuizView: View {
     
     @State var standardPadding:CGFloat = 25
     @State var questionNo = 1
-    @State var questionText = "The Houses of Parliament are comprised of the House of Commons and the House of _______."
     
     @State var correctQList:[Int] = []
     @State var incorrectQList:[Int] = []
     
     var body: some View {
         VStack {
-            Text("Question \(questionNo)")
-            .foregroundColor(Color("HustingsGreen"))
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            Text("\(listOfQuestions[questionNo].questionText)")
-                .padding(standardPadding)
-            
-            VStack(spacing: 5) {
-                Button (
-                    action: {
-                        self.answerButton(isCorrect: true)
-                    },
-                    label: { Text("A").fontWeight(.bold) }
-                )   .padding(standardPadding)
-                    .background(Color("HustingsGreen"))
-                    .foregroundColor(.white)
+            if ((questionNo-1) < listOfQuestions.count) {
+                Text("Question \(questionNo)")
+                    .foregroundColor(Color("HustingsGreen"))
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text("\(listOfQuestions[questionNo-1].questionText)")
+                    .padding(standardPadding)
                 
-                Button (
-                    action: {
-                        self.answerButton(isCorrect: true)
+                VStack(spacing: 10) {
+                    Button (
+                        action: {
+                            self.answerButton(buttonNo: 0)
                     },
-                    label: { Text("B").fontWeight(.bold) }
-                )   .padding(standardPadding)
-                    .background(Color("HustingsGreen"))
-                    .foregroundColor(.white)
-                
-                Button (
-                    action: {
-                        self.answerButton(isCorrect: true)
+                        label: { Text(listOfQuestions[questionNo-1].answers[0]).fontWeight(.bold) }
+                    )
+                        .fixedSize()
+                        .padding(standardPadding)
+                        .frame(width: 280, height: 75)
+                        .background(Color("HustingsGreen"))
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                    
+                    Button (
+                        action: {
+                            self.answerButton(buttonNo: 1)
                     },
-                    label: { Text("C").fontWeight(.bold) }
-                )   .padding(standardPadding)
-                    .background(Color("HustingsGreen"))
-                    .foregroundColor(.white)
-                
-                Button (
-                    action: {
-                        self.answerButton(isCorrect: true)
+                        label: { Text(listOfQuestions[questionNo-1].answers[1]).fontWeight(.bold) }
+                    )
+                        .fixedSize()
+                        .padding(standardPadding)
+                        .frame(width: 280, height: 75)
+                        .background(Color("HustingsGreen"))
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                    
+                    Button (
+                        action: {
+                            self.answerButton(buttonNo: 2)
                     },
-                    label: { Text("D").fontWeight(.bold) }
-                )   .padding(standardPadding)
-                    .background(Color("HustingsGreen"))
-                    .foregroundColor(.white)
+                        label: { Text(listOfQuestions[questionNo-1].answers[2]).fontWeight(.bold) }
+                    )
+                        .fixedSize()
+                        .padding(standardPadding)
+                        .frame(width: 280, height: 75)
+                        .background(Color("HustingsGreen"))
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                    
+                    Button (
+                        action: {
+                            self.answerButton(buttonNo: 3)
+                    },
+                        label: { Text(listOfQuestions[questionNo-1].answers[3]).fontWeight(.bold) }
+                    )
+                        .fixedSize()
+                        .padding(standardPadding)
+                        .frame(width: 280, height: 75)
+                        .background(Color("HustingsGreen"))
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                }
+            } else {
+                Text("You scored \(correctQList.count)/\(listOfQuestions.count)")
             }
         }
     }
     
-    func answerButton(isCorrect correct:Bool) {
+    func answerButton(buttonNo:Int) {
+        let correct = (buttonNo == listOfQuestions[questionNo-1].answer)
+        
         if (correct) {
-            correctQList.append(questionNo)
+            correctQList.append(questionNo-1)
         } else {
-            correctQList.append(questionNo)
+            incorrectQList.append(questionNo-1)
         }
         
         questionNo += 1

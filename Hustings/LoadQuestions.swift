@@ -13,7 +13,7 @@ struct LoadQuestions {
     
     func getQuestions() -> [Question] {
         
-        var question1 = Question(questionNo: 1, questionText: "After the 2019 General Election, which party forms the largest Opposition", answers: ["Conservatives","Labour","Liberal Democrats","Scottish National Party"], answer: 1)
+        var question1 = Question(questionNo: 1, questionText: "After the 2019 General Election, which party forms the largest Opposition?", answers: ["Conservatives","Labour","Liberal Democrats","Scottish National Party"], answer: 1)
         
         var question2 = Question(questionNo: 2, questionText: "Who is the current Prime Minister?", answers: ["Boris Johnson","Theresa May","Vince Cable","Count Binface"], answer: 0)
         

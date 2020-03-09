@@ -20,14 +20,14 @@ struct LogoTitleBar: View {
 //                    .frame(height: 10)
                 Rectangle()
                     .fill(Color("HustingsGreen"))
-                    .frame(height: 100)
+                    .frame(height: 90)
             }.overlay(
                 Image("HustingsLogoWhite")
                     .resizable()
                     .scaledToFit()
                     .padding(10)
             )
-        }
+        }//.frame(height: 82)
         .edgesIgnoringSafeArea(.top)
     }
 }
