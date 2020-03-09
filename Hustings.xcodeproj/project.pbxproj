@@ -120,6 +120,7 @@
 		E443D7022415C70700FB3F5D /* old files */ = {
 			isa = PBXGroup;
 			children = (
+				C93109682405EE9A00EAE2E1 /* DashboardView.swift */,
 				C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */,
 				E4559F0B240976360009C66C /* TopicView.swift */,
 			);
@@ -161,7 +162,6 @@
 				E4010CBD2407EAF600A89E95 /* LearnMenuView.swift */,
 				E4D96244240987B6005C7F6A /* ProvisionalList.swift */,
 				E4559F0D2409774B0009C66C /* Topic.swift */,
-				C93109682405EE9A00EAE2E1 /* DashboardView.swift */,
 				E4F87FC82409371E003A423C /* PrimaryTabView.swift */,
 				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
 				E4B4C33B2405C8CE002669FF /* LogInScreen.swift */,
