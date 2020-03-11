@@ -14,7 +14,7 @@ struct Topic {
 
 struct LearnMenuView: View {
     
-    @State var topics:[PoliticalTopic] = ProvisionalList().getProvisionalList()
+    @State var topics:[PoliticalTopic] = LoadTopics().loadTopics()
     
     var body: some View {
         NavigationView() {
