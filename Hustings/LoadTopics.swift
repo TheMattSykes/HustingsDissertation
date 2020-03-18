@@ -11,24 +11,31 @@ import Firebase
 import FirebaseDatabase
 import FirebaseFirestore
 
-struct LoadTopics {
+class LoadTopics {
     
     let db = Firestore.firestore()
     
+    var topicsComplete = false
+    
     func loadTopics() -> [PoliticalTopic] {
         
-        var topicList: [PoliticalTopic] = []
+        var listOfTopics: [PoliticalTopic] = []
         
         db.collection("Topics").getDocuments() { (querySnapshot, err) in
             if let err = err {
-                print("Error retrieving Topics")
+                print("Error retrieving Topics: \(err)")
+                self.topicsComplete = true
             } else {
+                // print("STARTING FOR")
                 for document in querySnapshot!.documents {
-                    topicList.append(PoliticalTopic(name: document.get("name") as! String, imageName: document.get("imageName") as! String))
+                    // print("INSIDE FOR")
+                    listOfTopics.append(PoliticalTopic(name: document.get("name") as! String, imageName: document.get("image_name") as! String))
+                    // print("Current topicList count: \(listOfTopics.count)")
                 }
+                self.topicsComplete = true
             }
         }
         
-        return topicList
+        return listOfTopics
     }
 }

@@ -8,13 +8,9 @@
 
 import SwiftUI
 
-struct Topic {
-    
-}
-
 struct LearnMenuView: View {
     
-    @State var topics:[PoliticalTopic] = LoadTopics().loadTopics()
+    @State var topics:[PoliticalTopic] = []
     
     var body: some View {
         NavigationView() {
@@ -46,11 +42,14 @@ struct LearnMenuView: View {
             .navigationBarHidden(true)
             .navigationViewStyle(StackNavigationViewStyle()).padding(0)
         }
+        .onAppear(
+            perform: { self.topics = LoadTopics().loadTopics() }
+        )
     }
 }
 
 struct LearnMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        LearnMenuView()
+         LearnMenuView()
     }
 }

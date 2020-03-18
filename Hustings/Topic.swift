@@ -15,6 +15,10 @@ struct PoliticalTopic: Identifiable {
     var textData:[String]?
     var quiz:[Question]?
     
+    func getName() -> String {
+        return name
+    }
+    
     init(name:String, imageName:String) {
         self.name = name
         self.imageName = imageName
