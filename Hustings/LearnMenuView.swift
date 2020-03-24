@@ -8,9 +8,16 @@
 
 import SwiftUI
 
+import Foundation
+import Firebase
+import FirebaseDatabase
+import FirebaseFirestore
+
 struct LearnMenuView: View {
     
-    @State var topics:[PoliticalTopic] = []
+    @State var topics = [PoliticalTopic]()
+    
+    let db = Firestore.firestore()
     
     var body: some View {
         NavigationView() {
@@ -24,7 +31,7 @@ struct LearnMenuView: View {
                         .foregroundColor((Color("HustingsGreen")))
                 }
                 List {
-                    ForEach(topics) { topic in
+                    ForEach((self.topics), id: \.self.id) { topic in
                         NavigationLink(destination: InformationView(topic: topic)) {
                             HStack(spacing: 15) {
                                 Image(topic.imageName)
@@ -38,13 +45,31 @@ struct LearnMenuView: View {
                         }
                     }
                 }
-            }.navigationBarTitle("")
+            }
+            .navigationBarTitle("")
             .navigationBarHidden(true)
             .navigationViewStyle(StackNavigationViewStyle()).padding(0)
-        }
-        .onAppear(
-            perform: { self.topics = LoadTopics().loadTopics() }
+        }.onAppear(
+            perform: { self.loadTopics() }
         )
+    }
+    
+    func loadTopics() {
+        
+//        var listOfTopics: [PoliticalTopic] = []
+        self.topics.removeAll()
+        self.db.collection("Topics").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error retrieving Topics: \(err)")
+            } else {
+                // print("STARTING FOR")
+                for document in querySnapshot!.documents {
+                    // print("INSIDE FOR")
+                    self.topics.append(PoliticalTopic(name: document.get("name") as! String, imageName: document.get("image_name") as! String))
+                    // print("Current topicList count: \(listOfTopics.count)")
+                }
+            }
+        }
     }
 }
 

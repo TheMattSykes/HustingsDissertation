@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct PoliticalTopic: Identifiable {
-    var id:String = UUID().uuidString
-    var name:String
-    var imageName:String
-    var textData:[String]?
-    var quiz:[Question]?
+class PoliticalTopic: ObservableObject {
+    @Published var id:String = UUID().uuidString
+    @Published var name:String
+    @Published var imageName:String
+    @Published var textData:[String]?
+    @Published var quiz:[Question]?
     
     func getName() -> String {
         return name

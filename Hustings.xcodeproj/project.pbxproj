@@ -204,6 +204,7 @@
 				E42D2DD224116FA200DC6B92 /* Question.swift */,
 				E42D2DD82411747000DC6B92 /* LoadQuestions.swift */,
 				E4010CBD2407EAF600A89E95 /* LearnMenuView.swift */,
+				C9AF44132418224800251513 /* LoadTopics.swift */,
 				E4D96244240987B6005C7F6A /* ProvisionalList.swift */,
 				E4559F0D2409774B0009C66C /* Topic.swift */,
 				E4F87FC82409371E003A423C /* PrimaryTabView.swift */,
@@ -221,7 +222,6 @@
 				E49F39962408361100819C67 /* DebateView.swift */,
 				E49F39982408361D00819C67 /* ClassView.swift */,
 				E49F399A2408362500819C67 /* AccountView.swift */,
-				C9AF44132418224800251513 /* LoadTopics.swift */,
 			);
 			path = Hustings;
 			sourceTree = "<group>";
