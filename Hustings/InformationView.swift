@@ -11,7 +11,25 @@ import SwiftUI
 struct InformationView: View {
     
     @State var topic:PoliticalTopic
-//    @State var progressBarValue:CGFloat = 0
+    @State var prevButtonColor = Color.black
+    @State var nextButtonColor = Color("HustingsGreen")
+    @State var nextButtonText = "Next"
+    
+    @State var paragraphNo = 0 {
+        didSet {
+            if (paragraphNo <= 0) {
+                prevButtonColor = .black
+            } else {
+                prevButtonColor = Color("HustingsGreen")
+            }
+            
+            if (paragraphNo < topic.getTextData().count - 1) {
+                nextButtonText = "Next"
+            } else {
+                nextButtonText = "Go to Quiz"
+            }
+        }
+    }
     
     var body: some View {
         VStack {
@@ -29,20 +47,45 @@ struct InformationView: View {
                 Spacer()
             }
             Spacer()
-            Button(
-                action: {
-                    
-                },
-                label: {
-                    Text("Next")
-                        .fontWeight(.bold)
-                }
-            ).fixedSize()
-                .frame(width: 100, height: 40)
-                .background(Color("HustingsGreen"))
-                .foregroundColor(.white)
-                .cornerRadius(15)
+            Text(topic.getTextData()[paragraphNo])
                 .padding(20)
+            Spacer()
+            
+            HStack(){
+                Button(
+                    action: {
+                        if (self.paragraphNo > 0) {
+                            self.paragraphNo -= 1
+                        }
+                    },
+                    label: {
+                        Text("Previous")
+                            .fontWeight(.bold)
+                    }
+                ).fixedSize()
+                    .frame(width: 100, height: 40)
+                    .background(prevButtonColor)
+                    .foregroundColor(.white)
+                    .cornerRadius(15)
+                    .padding(20)
+                
+                Button(
+                    action: {
+                        if (self.paragraphNo < self.topic.getTextData().count - 1) {
+                            self.paragraphNo += 1
+                        }
+                    },
+                    label: {
+                        Text(nextButtonText)
+                            .fontWeight(.bold)
+                    }
+                ).fixedSize()
+                    .frame(width: 100, height: 40)
+                    .background(nextButtonColor)
+                    .foregroundColor(.white)
+                    .cornerRadius(15)
+                    .padding(20)
+            }
         }
     }
 }

@@ -9,24 +9,34 @@
 import Foundation
 
 class PoliticalTopic: ObservableObject {
-    @Published var id:String = UUID().uuidString
+    @Published var id:String
     @Published var name:String
     @Published var imageName:String
     @Published var textData:[String]?
     @Published var quiz:[Question]?
     
+    func getID() -> String {
+        return id
+    }
+    
     func getName() -> String {
         return name
     }
     
-    init(name:String, imageName:String) {
+    func getTextData() -> [String] {
+        return textData!
+    }
+    
+    init(id:String, name:String, imageName:String) {
+        self.id = id
         self.name = name
         self.imageName = imageName
         self.textData = nil
         self.quiz = nil
     }
     
-    init(name:String, imageName:String, textData:[String], quiz:[Question]) {
+    init(id:String, name:String, imageName:String, textData:[String]?, quiz:[Question]?) {
+        self.id = id
         self.name = name
         self.imageName = imageName
         self.textData = textData

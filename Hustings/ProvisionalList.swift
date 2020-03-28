@@ -10,8 +10,8 @@ import Foundation
 
 struct ProvisionalList {
     
-    private var topicA = PoliticalTopic(name: "How to vote", imageName: "ballotbox-square")
-    private var topicB = PoliticalTopic(name: "Parliament", imageName: "parliament-exterior-square")
+    private var topicA = PoliticalTopic(id: "How_To_Vote", name: "How to vote", imageName: "ballotbox-square")
+    private var topicB = PoliticalTopic(id: "Parliament", name: "Parliament", imageName: "parliament-exterior-square")
     
     func getProvisionalList() -> [PoliticalTopic] {
         return [topicA, topicB]

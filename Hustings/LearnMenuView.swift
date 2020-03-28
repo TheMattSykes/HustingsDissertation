@@ -16,6 +16,7 @@ import FirebaseFirestore
 struct LearnMenuView: View {
     
     @State var topics = [PoliticalTopic]()
+    @State var textData = [String]()
     
     let db = Firestore.firestore()
     
@@ -55,8 +56,6 @@ struct LearnMenuView: View {
     }
     
     func loadTopics() {
-        
-//        var listOfTopics: [PoliticalTopic] = []
         self.topics.removeAll()
         self.db.collection("Topics").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -64,13 +63,60 @@ struct LearnMenuView: View {
             } else {
                 // print("STARTING FOR")
                 for document in querySnapshot!.documents {
+                    let docName = document.get("name") as! String
+                    
+                    print("DOCUMENT READ")
+                    print(docName)
                     // print("INSIDE FOR")
-                    self.topics.append(PoliticalTopic(name: document.get("name") as! String, imageName: document.get("image_name") as! String))
+                    self.topics.append(
+                        PoliticalTopic(
+                            id: document.documentID,
+                            name: docName,
+                            imageName: document.get("image_name") as! String,
+//                            textData: self.extractTextInfo(doc: document.reference.collection("Text_Data").document("Text")),
+                            textData: document["paragraphs"] as? [String] ?? [""],
+                            quiz: nil)
+                    )
                     // print("Current topicList count: \(listOfTopics.count)")
                 }
             }
+            
+            print("DOCUMENTS READ")
         }
     }
+    
+    
+//    func getTextData() {
+//        for topic in topics {
+//            print("CHECKING TOPICS...")
+//            self.db.collection("Topics/\(topic.getID())/Learn_Text").getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error retrieving Topics: \(err)")
+//                } else {
+//                    self.textData = self.extractTextInfo(doc: querySnapshot!.documents[0])
+//                }
+//            }
+//        }
+//    }
+//
+//    func extractTextInfo(doc:QueryDocumentSnapshot) -> [String] {
+//        print("EXTRACT FUNCTION REACHED")
+//        var textArray = [String]()
+//
+//        let dict = doc.data()
+//
+//        if let products = dict["products"] as? [AnyHashable: Any] {
+//            for (_,value) in products {
+//                textArray.append(value as! String)
+//
+//                print(value as! String)
+//            }
+//        }
+//
+//        return textArray
+//    }
+    
+    
 }
 
 struct LearnMenuView_Previews: PreviewProvider {
@@ -78,3 +124,4 @@ struct LearnMenuView_Previews: PreviewProvider {
          LearnMenuView()
     }
 }
+
