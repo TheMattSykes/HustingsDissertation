@@ -10,6 +10,7 @@
 		39DA50A129276EC42E9F7AED /* Pods_HustingsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886A1AED9DA6F380F418FEC /* Pods_HustingsTests.framework */; };
 		4EEEF31381D72D770F407842 /* Pods_Hustings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934BFD8F9768E37AC6DC4C77 /* Pods_Hustings.framework */; };
 		A8F547A19EE64AAFE567109E /* Pods_Hustings_HustingsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360B184ED05C001F1F11A882 /* Pods_Hustings_HustingsUITests.framework */; };
+		C90857E124325F17002F3DAF /* StoreSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90857E024325F17002F3DAF /* StoreSession.swift */; };
 		C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */; };
 		C93109692405EE9A00EAE2E1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109682405EE9A00EAE2E1 /* DashboardView.swift */; };
 		C97582D72417207C00A17B62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C97582D62417207C00A17B62 /* GoogleService-Info.plist */; };
@@ -69,6 +70,7 @@
 		6C9E2E4FF8256ABD61F00AF9 /* Pods-HustingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HustingsTests.debug.xcconfig"; path = "Target Support Files/Pods-HustingsTests/Pods-HustingsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		71F0117EF32057393DCAEBCA /* Pods-Hustings-HustingsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hustings-HustingsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hustings-HustingsUITests/Pods-Hustings-HustingsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		934BFD8F9768E37AC6DC4C77 /* Pods_Hustings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hustings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90857E024325F17002F3DAF /* StoreSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSession.swift; sourceTree = "<group>"; };
 		C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOptionsView.swift; sourceTree = "<group>"; };
 		C93109682405EE9A00EAE2E1 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hustings.entitlements; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				E49E473424035090004E818B /* ContentView.swift */,
 				E42D2DD024114D1E00DC6B92 /* QuizView.swift */,
 				E41F146F2412F1B500B44DE8 /* InformationView.swift */,
+				C90857E024325F17002F3DAF /* StoreSession.swift */,
 				E46067D92412777100A8B751 /* QuestionsView.swift */,
 				E42D2DD224116FA200DC6B92 /* Question.swift */,
 				E42D2DD82411747000DC6B92 /* LoadQuestions.swift */,
@@ -525,6 +528,7 @@
 				C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */,
 				E4F87FC92409371E003A423C /* PrimaryTabView.swift in Sources */,
 				E49E473024035090004E818B /* SceneDelegate.swift in Sources */,
+				C90857E124325F17002F3DAF /* StoreSession.swift in Sources */,
 				C9AF44142418224800251513 /* LoadTopics.swift in Sources */,
 				E4B4C3402405CA2D002669FF /* SignInWithApple.swift in Sources */,
 				E4559F0E2409774B0009C66C /* Topic.swift in Sources */,

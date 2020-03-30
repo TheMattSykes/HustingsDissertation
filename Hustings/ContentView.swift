@@ -12,14 +12,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var session: StoreSession
+    
     var body: some View {
-//        LogInScreen()
-        PrimaryTabView()
+        Group {
+            if (session.session != nil) {
+                PrimaryTabView()
+            } else {
+                LogInScreen()
+            }
+        }.onAppear(
+            perform: {
+                print("Preparing Session Listening...")
+                self.session.listen()
+                print("Session now listening.")
+        }
+        )
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

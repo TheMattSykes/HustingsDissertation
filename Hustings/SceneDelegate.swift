@@ -33,6 +33,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+        
+        print("Checking session store...")
+        window?.rootViewController = UIHostingController(
+          rootView: ContentView().environmentObject(StoreSession())
+        )
+        print("Session store: Cleared")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
