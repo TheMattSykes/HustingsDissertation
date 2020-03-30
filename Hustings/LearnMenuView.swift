@@ -33,7 +33,7 @@ struct LearnMenuView: View {
                 }
                 List {
                     ForEach((self.topics), id: \.self.id) { topic in
-                        NavigationLink(destination: InformationView(topic: topic)) {
+                        NavigationLink(destination: LearnState(topic: topic)) {
                             HStack(spacing: 15) {
                                 Image(topic.imageName)
                                     .resizable()
@@ -49,7 +49,7 @@ struct LearnMenuView: View {
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            .navigationViewStyle(StackNavigationViewStyle()).padding(0)
+//            .navigationViewStyle(StackNavigationViewStyle()).padding(0)
         }.onAppear(
             perform: { self.loadTopics() }
         )
@@ -61,27 +61,18 @@ struct LearnMenuView: View {
             if let err = err {
                 print("Error retrieving Topics: \(err)")
             } else {
-                // print("STARTING FOR")
                 for document in querySnapshot!.documents {
                     let docName = document.get("name") as! String
-                    
-                    print("DOCUMENT READ")
-                    print(docName)
-                    // print("INSIDE FOR")
                     self.topics.append(
                         PoliticalTopic(
                             id: document.documentID,
                             name: docName,
                             imageName: document.get("image_name") as! String,
-//                            textData: self.extractTextInfo(doc: document.reference.collection("Text_Data").document("Text")),
                             textData: document["paragraphs"] as? [String] ?? [""],
                             quiz: nil)
                     )
-                    // print("Current topicList count: \(listOfTopics.count)")
                 }
             }
-            
-            print("DOCUMENTS READ")
         }
     }
     

@@ -15,6 +15,8 @@ struct InformationView: View {
     @State var nextButtonColor = Color("HustingsGreen")
     @State var nextButtonText = "Next"
     
+    @Binding var topicViewState:topicMode
+    
     @State var paragraphNo = 0 {
         didSet {
             if (paragraphNo <= 0) {
@@ -73,6 +75,8 @@ struct InformationView: View {
                     action: {
                         if (self.paragraphNo < self.topic.getTextData().count - 1) {
                             self.paragraphNo += 1
+                        } else {
+                            self.topicViewState = .quiz
                         }
                     },
                     label: {
@@ -90,8 +94,8 @@ struct InformationView: View {
     }
 }
 
-struct InformationView_Previews: PreviewProvider {
-    static var previews: some View {
-        InformationView(topic: ProvisionalList().getProvisionalList()[0])
-    }
-}
+//struct InformationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//       InformationView(topic: ProvisionalList().getProvisionalList()[0], topicViewState: topicMode.information)
+//    }
+//}
