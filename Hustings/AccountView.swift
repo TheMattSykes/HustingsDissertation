@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct AccountView: View {
+    
+    @EnvironmentObject var session: StoreSession
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Image(systemName: "person.circle")
+                Text("My Account")
+            }
+            
+            Text("")
+        }
     }
 }
 

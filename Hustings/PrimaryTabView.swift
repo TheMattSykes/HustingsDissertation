@@ -34,7 +34,7 @@ struct PrimaryTabView: View {
                         Text("Class")
                     }
                 
-                Text("My Account")
+                AccountView()
                     .tabItem {
                         Image(systemName: "person.circle")
                         Text("My Account")

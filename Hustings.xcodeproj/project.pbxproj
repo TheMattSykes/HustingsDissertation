@@ -202,6 +202,8 @@
 				C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */,
 				E4B4C3412405CB3B002669FF /* Model */,
 				E49E473424035090004E818B /* ContentView.swift */,
+				E4F87FC82409371E003A423C /* PrimaryTabView.swift */,
+				E4B4C33B2405C8CE002669FF /* LogInScreen.swift */,
 				E42D2DD024114D1E00DC6B92 /* QuizView.swift */,
 				E41F146F2412F1B500B44DE8 /* InformationView.swift */,
 				C90857E024325F17002F3DAF /* StoreSession.swift */,
@@ -213,9 +215,8 @@
 				C9AF44132418224800251513 /* LoadTopics.swift */,
 				E4D96244240987B6005C7F6A /* ProvisionalList.swift */,
 				E4559F0D2409774B0009C66C /* Topic.swift */,
-				E4F87FC82409371E003A423C /* PrimaryTabView.swift */,
 				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
-				E4B4C33B2405C8CE002669FF /* LogInScreen.swift */,
+				E49F399A2408362500819C67 /* AccountView.swift */,
 				E49E472D24035090004E818B /* AppDelegate.swift */,
 				E49E472F24035090004E818B /* SceneDelegate.swift */,
 				C97582D62417207C00A17B62 /* GoogleService-Info.plist */,
@@ -227,7 +228,6 @@
 				E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */,
 				E49F39962408361100819C67 /* DebateView.swift */,
 				E49F39982408361D00819C67 /* ClassView.swift */,
-				E49F399A2408362500819C67 /* AccountView.swift */,
 			);
 			path = Hustings;
 			sourceTree = "<group>";

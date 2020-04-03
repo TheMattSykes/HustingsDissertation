@@ -22,6 +22,10 @@ class StoreSession: ObservableObject {
         }
     }
     
+    func getSession() -> User {
+        return session!
+    }
+    
     func listen() {
         print("Listen request recieved.")
         handle = Auth.auth().addStateDidChangeListener { [unowned self] (auth, user) in
