@@ -18,7 +18,7 @@ struct QuizView: View {
     
     @State var listOfQuestions = [Question]()
     
-    @State var standardPadding:CGFloat = 25
+    @State var standardPadding:CGFloat = 20
     @State var questionNo = 1
     
     @State var correctQList:[Int] = []
@@ -46,7 +46,7 @@ struct QuizView: View {
                         )
                             .fixedSize()
                             .padding(self.standardPadding)
-                            .frame(width: 280, height: 75)
+                            .frame(width: 260, height: 50)
                             .background(Color("HustingsGreen"))
                             .foregroundColor(.white)
                             .cornerRadius(15)

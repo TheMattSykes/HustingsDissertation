@@ -57,6 +57,10 @@ class StoreSession: ObservableObject {
         Auth.auth().createUser(withEmail: email, password: password, completion: handler)
     }
     
+    func resetPassword(email: String, handler: @escaping AuthDataResultCallback) {
+        Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
     func unbind() {
         if let handle = handle {
             Auth.auth().removeStateDidChangeListener(handle)

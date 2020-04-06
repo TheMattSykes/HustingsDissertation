@@ -13,13 +13,18 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var session: StoreSession
+    @State var passwordReset = false
     
     var body: some View {
         Group {
             if (session.session != nil) {
                 PrimaryTabView()
             } else {
-                LogInScreen()
+                if (!passwordReset) {
+                    LogInScreen(passwordReset: $passwordReset)
+                } else {
+                    ResetPasswordScreen(passwordReset: $passwordReset)
+                }
             }
         }.onAppear(
             perform: {

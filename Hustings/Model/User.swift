@@ -13,6 +13,14 @@ struct User {
     var email: String?
     var displayName: String?
     
+    func getName() -> String {
+        return displayName ?? "Error retrieving name."
+    }
+    
+    func getEmail() -> String {
+        return email ?? "Error retrieving email."
+    }
+    
     init(userID: String?, displayName: String?, email:String?) {
         self.userID = userID
         self.displayName = displayName
