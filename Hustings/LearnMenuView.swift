@@ -75,39 +75,6 @@ struct LearnMenuView: View {
             }
         }
     }
-    
-    
-//    func getTextData() {
-//        for topic in topics {
-//            print("CHECKING TOPICS...")
-//            self.db.collection("Topics/\(topic.getID())/Learn_Text").getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error retrieving Topics: \(err)")
-//                } else {
-//                    self.textData = self.extractTextInfo(doc: querySnapshot!.documents[0])
-//                }
-//            }
-//        }
-//    }
-//
-//    func extractTextInfo(doc:QueryDocumentSnapshot) -> [String] {
-//        print("EXTRACT FUNCTION REACHED")
-//        var textArray = [String]()
-//
-//        let dict = doc.data()
-//
-//        if let products = dict["products"] as? [AnyHashable: Any] {
-//            for (_,value) in products {
-//                textArray.append(value as! String)
-//
-//                print(value as! String)
-//            }
-//        }
-//
-//        return textArray
-//    }
-    
-    
 }
 
 struct LearnMenuView_Previews: PreviewProvider {

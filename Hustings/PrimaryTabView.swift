@@ -16,6 +16,12 @@ struct PrimaryTabView: View {
         VStack {
             LogoTitleBar()
             TabView {
+                Text("Dashboard")
+                    .tabItem {
+                        Image(systemName: "clock")
+                        Text("Dashboard")
+                }
+                
                 LearnMenuView()
                     .tabItem {
                         Image(systemName: "link.circle")
@@ -28,7 +34,7 @@ struct PrimaryTabView: View {
                         Text("Debate")
                     }
                 
-                Text("My Class")
+                ClassView()
                     .tabItem {
                         Image(systemName: "person.3.fill")
                         Text("Class")

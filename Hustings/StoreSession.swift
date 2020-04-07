@@ -9,6 +9,8 @@
 import SwiftUI
 import Foundation
 import Firebase
+import FirebaseDatabase
+import FirebaseFirestore
 import Combine
 
 class StoreSession: ObservableObject {
@@ -22,8 +24,14 @@ class StoreSession: ObservableObject {
         }
     }
     
+    let db = Firestore.firestore()
+    
     func getSession() -> User {
         return session!
+    }
+    
+    func updateSession(updatedUser:User) {
+        session = updatedUser
     }
     
     func listen() {

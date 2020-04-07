@@ -14,14 +14,24 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var session: StoreSession
     @State var passwordReset = false
+    @State var newUser = true
+    @State var loadingView = true
     
     var body: some View {
         Group {
             if (session.session != nil) {
-                PrimaryTabView()
+                if (!loadingView && !newUser) {
+                    PrimaryTabView()
+                } else {
+                    if (loadingView) {
+                        LoadProfileView(loadingView: $loadingView, newUser: $newUser)
+                    } else {
+                        NewUserInfo(newUser: $newUser, loadingView: $loadingView)
+                    }
+                }
             } else {
                 if (!passwordReset) {
-                    LogInScreen(passwordReset: $passwordReset)
+                    LogInScreen(passwordReset: $passwordReset, loadingView: $loadingView)
                 } else {
                     ResetPasswordScreen(passwordReset: $passwordReset)
                 }
@@ -31,7 +41,7 @@ struct ContentView: View {
                 print("Preparing Session Listening...")
                 self.session.listen()
                 print("Session now listening.")
-        }
+            }
         )
     }
 }

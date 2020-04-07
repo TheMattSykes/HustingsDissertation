@@ -12,9 +12,38 @@ struct User {
     var userID: String?
     var email: String?
     var displayName: String?
+    var firstName: String?
+    var lastName: String?
+    var classID: String?
     
-    func getName() -> String {
-        return displayName ?? "Error retrieving name."
+    func getUserID() -> String? {
+        return userID ?? nil
+    }
+    
+    func getName() -> String? {
+        print("!!! GETTING NAME \(String(describing: firstName)) \(String(describing: lastName))")
+        
+        if (firstName != nil && lastName != nil) {
+            return (firstName! + " " + lastName!)
+        } else {
+            return nil
+        }
+    }
+    
+    mutating func updateName(newFirstName: String, newLastName: String) {
+        print("Updating name to \(newFirstName) \(newLastName)...")
+        self.firstName = newFirstName
+        self.lastName = newLastName
+        
+        print("Updated name to \(self.firstName ?? "NOT SET") \(self.lastName ?? "NOT SET")...")
+    }
+    
+    func getClassID() -> String? {
+        return classID
+    }
+    
+    mutating func updateClassID(newClassID: String) {
+        self.classID = newClassID
     }
     
     func getEmail() -> String {

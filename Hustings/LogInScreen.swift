@@ -13,6 +13,7 @@ struct LogInScreen: View {
     @EnvironmentObject var session: StoreSession
     
     @Binding var passwordReset:Bool
+    @Binding var loadingView:Bool
     
     @State private var email = ""
     @State private var password = ""
@@ -136,7 +137,10 @@ struct LogInScreen: View {
                 .background(Color.white)
                 .foregroundColor(Color.blue)
                 .cornerRadius(15)
-        }.padding(10)
+            }.onAppear(
+                perform: { self.loadingView = true }
+            )
+            .padding(10)
     }
 }
 

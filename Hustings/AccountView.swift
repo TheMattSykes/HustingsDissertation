@@ -14,6 +14,7 @@ struct AccountView: View {
     @State var currentUser:User? = nil
     
     @State private var showAlert = false
+    @State private var showDeleteAlert = false
     
     var body: some View {
         VStack(spacing: 10) {
@@ -27,7 +28,7 @@ struct AccountView: View {
             }
             
             if (currentUser != nil) {
-                Text("Name: \(currentUser!.getName())")
+                Text("Name: \(currentUser!.getName() ?? "Error retrieving name.")")
                 Text("Email: \(currentUser!.getEmail())")
             } else {
                 Text("Error retieving user information.")
@@ -61,13 +62,13 @@ struct AccountView: View {
                     print("Attempting to log out...")
                     // let signedOut = self.session.deleteAccount()
                     
-                    self.showAlert = true
+                    self.showDeleteAlert = true
                 },
                 label: {
                     Text("Delete Account")
                     
                 }
-            ).alert(isPresented: self.$showAlert) {
+            ).alert(isPresented: self.$showDeleteAlert) {
                 Alert(title: Text("Delete Account"), message: Text("Are you sure you want to delete your account?"), dismissButton: .default(Text("OK")))
             }
                 .fixedSize()

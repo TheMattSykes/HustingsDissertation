@@ -9,13 +9,53 @@
 import SwiftUI
 
 struct ClassView: View {
+    
+    @EnvironmentObject var session: StoreSession
+    @State var currentUser:User? = nil
+    @State var currentState:ClassState = .empty
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 15) {
+            HStack {
+                Image(systemName: "person.3.fill")
+                    .foregroundColor((Color("HustingsGreen")))
+                    .font(.largeTitle)
+                Text("Class")
+                    .foregroundColor((Color("HustingsGreen")))
+                    .font(.largeTitle)
+            }
+            
+            if (self.currentState == .empty) {
+                EmptyClassView(currentUser: $currentUser, currentState: $currentState)
+            }
+            
+            if (self.currentState == .new) {
+                NewClassView(currentState: $currentState)
+            }
+            
+            if (self.currentState == .join) {
+                Text("Join mode")
+            }
+            
+            if (self.currentState == .main_teacher) {
+                Text("Currently joined to class")
+            }
+        }.onAppear(
+            perform: {
+                self.currentUser = self.session.getSession()
+                
+                if (self.currentUser?.getClassID() == nil) {
+                    self.currentState = .empty
+                }
+            }
+        )
     }
 }
 
-struct ClassView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClassView()
-    }
+enum ClassState {
+    case empty
+    case new
+    case join
+    case main_student
+    case main_teacher
 }
