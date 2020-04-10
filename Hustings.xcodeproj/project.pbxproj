@@ -11,6 +11,7 @@
 		4EEEF31381D72D770F407842 /* Pods_Hustings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934BFD8F9768E37AC6DC4C77 /* Pods_Hustings.framework */; };
 		A8F547A19EE64AAFE567109E /* Pods_Hustings_HustingsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360B184ED05C001F1F11A882 /* Pods_Hustings_HustingsUITests.framework */; };
 		C90857E124325F17002F3DAF /* StoreSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90857E024325F17002F3DAF /* StoreSession.swift */; };
+		C92D8427243FEE0400159C7D /* MainTeacherClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */; };
 		C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */; };
 		C93109692405EE9A00EAE2E1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109682405EE9A00EAE2E1 /* DashboardView.swift */; };
 		C9669985243B8A36008C5383 /* NewUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9669984243B8A36008C5383 /* NewUserInfo.swift */; };
@@ -77,6 +78,7 @@
 		71F0117EF32057393DCAEBCA /* Pods-Hustings-HustingsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hustings-HustingsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hustings-HustingsUITests/Pods-Hustings-HustingsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		934BFD8F9768E37AC6DC4C77 /* Pods_Hustings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hustings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90857E024325F17002F3DAF /* StoreSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSession.swift; sourceTree = "<group>"; };
+		C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTeacherClassView.swift; sourceTree = "<group>"; };
 		C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOptionsView.swift; sourceTree = "<group>"; };
 		C93109682405EE9A00EAE2E1 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hustings.entitlements; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				E4D96244240987B6005C7F6A /* ProvisionalList.swift */,
 				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
 				E49F39982408361D00819C67 /* ClassView.swift */,
+				C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */,
 				C9669988243BEDB6008C5383 /* NewClassView.swift */,
 				C966998A243BEDDF008C5383 /* JoinClassView.swift */,
 				C966998C243BEDF8008C5383 /* EmptyClassView.swift */,
@@ -549,6 +552,7 @@
 				C9669987243BCF6F008C5383 /* LoadProfileView.swift in Sources */,
 				E4D96245240987B6005C7F6A /* ProvisionalList.swift in Sources */,
 				C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */,
+				C92D8427243FEE0400159C7D /* MainTeacherClassView.swift in Sources */,
 				E4F87FC92409371E003A423C /* PrimaryTabView.swift in Sources */,
 				E49E473024035090004E818B /* SceneDelegate.swift in Sources */,
 				C90857E124325F17002F3DAF /* StoreSession.swift in Sources */,

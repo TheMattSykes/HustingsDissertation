@@ -73,7 +73,8 @@ struct NewUserInfo: View {
                             
                             self.db.collection("Users").document(self.currentUser!.getUserID()!).setData ([
                                 "firstName": self.firstName,
-                                "lastName": self.lastName
+                                "lastName": self.lastName,
+                                "email": self.currentUser!.getEmail()
                             ]) { err in
                                 if let err = self.err {
                                     self.showingAlert = true

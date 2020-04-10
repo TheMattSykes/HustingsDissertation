@@ -7,12 +7,22 @@
 //
 
 import SwiftUI
+import Foundation
+import Firebase
+import FirebaseDatabase
+import FirebaseFirestore
 
 struct ClassView: View {
     
     @EnvironmentObject var session: StoreSession
     @State var currentUser:User? = nil
     @State var currentState:ClassState = .empty
+    
+    @State private var showingAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    
+    let db = Firestore.firestore()
     
     var body: some View {
         VStack(spacing: 15) {
@@ -23,6 +33,8 @@ struct ClassView: View {
                 Text("Class")
                     .foregroundColor((Color("HustingsGreen")))
                     .font(.largeTitle)
+            }.alert(isPresented: $showingAlert) {
+                Alert(title: Text(self.alertTitle), message: Text(self.alertMessage), dismissButton: .default(Text("OK")))
             }
             
             if (self.currentState == .empty) {
@@ -38,14 +50,37 @@ struct ClassView: View {
             }
             
             if (self.currentState == .main_teacher) {
-                Text("Currently joined to class")
+                MainTeacherClassView(currentState: $currentState)
+            }
+            
+            if (self.currentState == .main_student) {
+                Text("Currently joined to class as a student \(currentUser!.getClassID()!)")
             }
         }.onAppear(
             perform: {
                 self.currentUser = self.session.getSession()
                 
-                if (self.currentUser?.getClassID() == nil) {
-                    self.currentState = .empty
+                if (self.currentUser!.getClassID() == nil) {
+                     self.currentState = .empty
+                } else {
+                    let docRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
+                     
+                    docRef.getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            let ownerID = document.get("ownerID") as! String?
+                            
+                            if (ownerID == self.currentUser!.getUserID()!) {
+                                self.currentState = .main_teacher
+                            } else {
+                                self.currentState = .main_student
+                            }
+                        } else {
+                            self.showingAlert = true
+                            self.alertTitle = "Error Locating Class"
+                            self.alertMessage = "Please try again."
+                            self.currentState = .empty
+                        }
+                    }
                 }
             }
         )

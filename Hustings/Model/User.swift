@@ -55,4 +55,13 @@ struct User {
         self.displayName = displayName
         self.email = email
     }
+    
+    init(userID: String?, displayName: String?, email:String?, firstName:String?, lastName:String?, classID:String?) {
+        self.userID = userID
+        self.displayName = displayName
+        self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
+        self.classID = classID
+    }
 }

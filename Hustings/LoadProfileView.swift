@@ -43,20 +43,31 @@ struct LoadProfileView: View {
                     print("Attempting to get user's name...")
                     if let document = document, document.exists {
                         print("Information exists. Accessing...")
-                        let firstName = document.get("firstName") as! String
-                        let lastName = document.get("lastName") as! String
+                        let firstName = document.get("firstName") as! String?
+                        let lastName = document.get("lastName") as! String?
+                        print("Name: \(String(describing: lastName)) \(String(describing: lastName)) received.")
                         
-                        print("Name: \(firstName) \(lastName) received.")
+                        let classID = document.get("classID") as! String?
+                        
+                        print("ClassID: \(String(describing: classID)) received.")
                         
                         print("Setting user info...")
-                        self.currentUser!.updateName(newFirstName: firstName, newLastName: lastName)
+                        
+                        if (classID != nil) {
+                            self.currentUser!.updateClassID(newClassID: classID!)
+                        }
+                        
+                        if (firstName != nil || lastName != nil) {
+                            self.currentUser!.updateName(newFirstName: firstName!, newLastName: lastName!)
+                            self.newUser = false
+                            self.session.updateSession(updatedUser: self.currentUser!)
+                        } else {
+                            self.newUser = true
+                        }
+                        
                         print("User info set.")
                         
-                        self.newUser = false
-                        
                         self.loadingView = false
-                        
-                        self.session.updateSession(updatedUser: self.currentUser!)
                     } else {
                         self.newUser = true
                         self.loadingView = false
