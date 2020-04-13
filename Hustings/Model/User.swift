@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct User {
-    var userID: String?
-    var email: String?
-    var displayName: String?
-    var firstName: String?
-    var lastName: String?
-    var classID: String?
+class User: ObservableObject, Identifiable {
+    @Published var userID: String?
+    @Published var email: String?
+    @Published var displayName: String?
+    @Published var firstName: String?
+    @Published var lastName: String?
+    @Published var classID: String?
     
     func getUserID() -> String? {
         return userID ?? nil
@@ -30,7 +30,7 @@ struct User {
         }
     }
     
-    mutating func updateName(newFirstName: String, newLastName: String) {
+    func updateName(newFirstName: String, newLastName: String) {
         print("Updating name to \(newFirstName) \(newLastName)...")
         self.firstName = newFirstName
         self.lastName = newLastName
@@ -42,7 +42,7 @@ struct User {
         return classID
     }
     
-    mutating func updateClassID(newClassID: String) {
+    func updateClassID(newClassID: String) {
         self.classID = newClassID
     }
     
