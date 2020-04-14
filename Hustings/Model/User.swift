@@ -15,6 +15,7 @@ class User: ObservableObject, Identifiable {
     @Published var firstName: String?
     @Published var lastName: String?
     @Published var classID: String?
+    @Published var madeClassRequest: Bool
     
     func getUserID() -> String? {
         return userID ?? nil
@@ -46,6 +47,14 @@ class User: ObservableObject, Identifiable {
         self.classID = newClassID
     }
     
+    func getMadeClassRequest() -> Bool {
+        return madeClassRequest
+    }
+    
+    func updateMadeClassRequest(madeRequest: Bool) {
+        self.madeClassRequest = madeRequest
+    }
+    
     func getEmail() -> String {
         return email ?? "Error retrieving email."
     }
@@ -54,14 +63,16 @@ class User: ObservableObject, Identifiable {
         self.userID = userID
         self.displayName = displayName
         self.email = email
+        self.madeClassRequest = false
     }
     
-    init(userID: String?, displayName: String?, email:String?, firstName:String?, lastName:String?, classID:String?) {
+    init(userID: String?, displayName: String?, email:String?, firstName:String?, lastName:String?, classID:String?, classRequest: Bool) {
         self.userID = userID
         self.displayName = displayName
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.classID = classID
+        self.madeClassRequest = classRequest
     }
 }

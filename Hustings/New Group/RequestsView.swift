@@ -38,10 +38,10 @@ struct RequestsView: View {
                         
                         Button(
                               action: {
-                                  
+                                self.manageRequest(approveRequest: true, id: user.getUserID()!)
                               },
                               label: {
-                                 Text("Approve")
+                                Text("Approve")
                               }
                           ).fixedSize()
                           .padding(10)
@@ -76,6 +76,31 @@ struct RequestsView: View {
                 }
             }
         )
+    }
+    
+    func manageRequest(approveRequest:Bool, id:String) {
+        let classDocRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
+        let userDocRef = self.db.collection("Users").document(id)
+        
+        // User approves request to join class
+        if (approveRequest) {
+            classDocRef.updateData([
+                "members": FieldValue.arrayUnion([id]),
+                "requests": FieldValue.arrayRemove([id])
+            ])
+            
+            userDocRef.updateData([
+                "classID": self.currentUser!.getClassID()!
+            ])
+        } else { // User denies request
+            classDocRef.updateData([
+                "requests": FieldValue.arrayRemove([id])
+            ])
+        }
+        
+        userDocRef.updateData([
+            "madeClassRequest": false
+        ])
     }
         
     func convertUserIDsToUsers() {
@@ -116,6 +141,8 @@ struct RequestsView: View {
         guard let index = Array(offsets).first else {
             return
         }
+        
+        manageRequest(approveRequest: false, id: users[index].getUserID()!)
         
         users.remove(at: index)
     }

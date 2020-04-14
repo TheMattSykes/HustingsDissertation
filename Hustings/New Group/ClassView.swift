@@ -46,7 +46,7 @@ struct ClassView: View {
             }
             
             if (self.currentState == .join) {
-                Text("Join mode")
+                JoinClassView(currentState: $currentState)
             }
             
             if (self.currentState == .main_teacher) {
@@ -56,6 +56,10 @@ struct ClassView: View {
             if (self.currentState == .main_student) {
                 Text("Currently joined to class as a student \(currentUser!.getClassID()!)")
             }
+            
+            if (self.currentState == .request_made) {
+                
+            }
         }.onAppear(
             perform: {
                 self.currentUser = self.session.getSession()
@@ -63,22 +67,27 @@ struct ClassView: View {
                 if (self.currentUser!.getClassID() == nil) {
                      self.currentState = .empty
                 } else {
-                    let docRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
-                     
-                    docRef.getDocument { (document, error) in
-                        if let document = document, document.exists {
-                            let ownerID = document.get("ownerID") as! String?
-                            
-                            if (ownerID == self.currentUser!.getUserID()!) {
-                                self.currentState = .main_teacher
+                    
+                    if (self.currentUser!.getMadeClassRequest()) {
+                        self.currentState = .request_made
+                    } else {
+                        let docRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
+                         
+                        docRef.getDocument { (document, error) in
+                            if let document = document, document.exists {
+                                let ownerID = document.get("ownerID") as! String?
+                                
+                                if (ownerID == self.currentUser!.getUserID()!) {
+                                    self.currentState = .main_teacher
+                                } else {
+                                    self.currentState = .main_student
+                                }
                             } else {
-                                self.currentState = .main_student
+                                self.showingAlert = true
+                                self.alertTitle = "Error Locating Class"
+                                self.alertMessage = "Please try again."
+                                self.currentState = .empty
                             }
-                        } else {
-                            self.showingAlert = true
-                            self.alertTitle = "Error Locating Class"
-                            self.alertMessage = "Please try again."
-                            self.currentState = .empty
                         }
                     }
                 }
@@ -93,5 +102,6 @@ enum ClassState {
     case join
     case main_student
     case main_teacher
+    case request_made
 }
 

@@ -42,7 +42,6 @@ struct UserListTeacherClassView: View {
         }.onAppear(
             perform: {
                 self.currentUser = self.session.getSession()
-                
                 self.teacherView = .list
                 
                 if (self.currentUser == nil) {
@@ -88,7 +87,7 @@ struct UserListTeacherClassView: View {
                 
                     if (firstName != nil && lastName != nil && email != nil && classID != nil) {
                         self.users.append(
-                            User(userID: userID, displayName: "", email: email, firstName: firstName, lastName: lastName, classID: classID)
+                            User(userID: userID, displayName: "", email: email, firstName: firstName, lastName: lastName, classID: classID, classRequest: false)
                         )
                         print("User created")
                     }
@@ -106,6 +105,19 @@ struct UserListTeacherClassView: View {
         guard let index = Array(offsets).first else {
             return
         }
+        
+        let id = users[index].getClassID()!
+        let classDocRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
+        let userDocRef = self.db.collection("Users").document(id)
+        
+        classDocRef.updateData([
+            "members": FieldValue.arrayRemove([id])
+        ])
+        
+        userDocRef.updateData([
+            "classID": FieldValue.delete(),
+            "madeClassRequest": false
+        ])
         
         users.remove(at: index)
     }

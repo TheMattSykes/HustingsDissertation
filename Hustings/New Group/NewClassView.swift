@@ -40,23 +40,7 @@ struct NewClassView: View {
             HStack(spacing: 5) {
                 Button(
                     action: {
-                        self.db.collection("Classes").document(self.className).setData ([
-                            "ownerID": self.currentUser?.getUserID() ?? "nil",
-                            "members": [self.currentUser?.getUserID()],
-                            "requests": [String]()
-                        ]) { err in
-                            if let err = err {
-                                print("An error occured: \(err)")
-                                
-                                self.showingAlert = true
-                                self.alertTitle = "Error Creating Class"
-                                self.alertMessage = "Please ensure the class name is unique and that you are connected to the internet."
-                            } else {
-                                print("Document updated.")
-                                
-                                self.setUserClass()
-                            }
-                        }
+                        self.createNewClass()
                     },
                     label: {
                        Text("Create Class")
@@ -93,6 +77,37 @@ struct NewClassView: View {
                 self.currentUser = self.session.getSession()
             }
         )
+    }
+    
+    func createNewClass() {
+        
+        let classDocRef = self.db.collection("Classes").document(self.className)
+        
+        classDocRef.getDocument { (document, error) in
+            if let document = document, !document.exists {
+                classDocRef.setData ([
+                    "ownerID": self.currentUser?.getUserID() ?? "nil",
+                    "members": [self.currentUser?.getUserID()],
+                    "requests": [String]()
+                ]) { err in
+                    if let err = err {
+                        print("An error occured: \(err)")
+                        
+                        self.showingAlert = true
+                        self.alertTitle = "Error Creating Class"
+                        self.alertMessage = "Please ensure the class name is unique and that you are connected to the internet."
+                    } else {
+                        print("Document updated.")
+                        
+                        self.setUserClass()
+                    }
+                }
+            } else {
+                self.showingAlert = true
+                self.alertTitle = "Class Already Exists"
+                self.alertMessage = "A class with that name already exists."
+            }
+        }
     }
     
     func setUserClass() {

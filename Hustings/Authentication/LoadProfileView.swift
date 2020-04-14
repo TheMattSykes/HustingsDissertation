@@ -51,10 +51,18 @@ struct LoadProfileView: View {
                         
                         print("ClassID: \(String(describing: classID)) received.")
                         
+                        let madeClassRequest = document.get("madeClassRequest") as! Bool?
+                        
                         print("Setting user info...")
                         
                         if (classID != nil) {
                             self.currentUser!.updateClassID(newClassID: classID!)
+                        }
+                        
+                        if (madeClassRequest == nil) {
+                            self.currentUser!.updateMadeClassRequest(madeRequest: false)
+                        } else {
+                            self.currentUser!.updateMadeClassRequest(madeRequest: madeClassRequest!)
                         }
                         
                         if (firstName != nil || lastName != nil) {
