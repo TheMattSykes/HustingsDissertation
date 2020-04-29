@@ -19,7 +19,11 @@ struct JoinClassView: View {
     
     @State var currentUser:User?
     
-    @State private var className = ""
+    @State private var className = "" {
+        didSet {
+            self.className = self.className.lowercased()
+        }
+    }
     
     @State private var showingAlert = false
     @State private var alertTitle = ""
@@ -39,7 +43,7 @@ struct JoinClassView: View {
             HStack(spacing: 5) {
                 Button(
                     action: {
-                        
+                        self.joinClass()
                     },
                     label: {
                        Text("Join Class")
@@ -65,15 +69,25 @@ struct JoinClassView: View {
     func joinClass() {
         let userID = self.currentUser!.getUserID()!
         let classDocRef = self.db.collection("Classes").document(self.className)
-        let userDocRef = self.db.collection("Users").document(userID)
         
         classDocRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 classDocRef.updateData([
                     "requests": FieldValue.arrayUnion([userID])
                 ])
+                
+                self.updateUserWithRequest()
+            } else {
+                self.showingAlert = true
+                self.alertTitle = "Class Not Found"
+                self.alertMessage = "No class by that name was found."
             }
         }
+    }
+    
+    func updateUserWithRequest() {
+        let userID = self.currentUser!.getUserID()!
+        let userDocRef = self.db.collection("Users").document(userID)
         
         userDocRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -85,5 +99,8 @@ struct JoinClassView: View {
         }
         
         self.currentState = .request_made
+        
+        self.currentUser!.updateMadeClassRequest(madeRequest: true)
+        session.updateSession(updatedUser: self.currentUser!)
     }
 }

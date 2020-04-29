@@ -16,7 +16,7 @@ struct PrimaryTabView: View {
         VStack {
             LogoTitleBar()
             TabView {
-                Text("Dashboard")
+                DashboardView()
                     .tabItem {
                         Image(systemName: "clock")
                         Text("Dashboard")

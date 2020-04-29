@@ -20,7 +20,11 @@ struct NewClassView: View {
     
     @State var currentUser:User?
     
-    @State private var className = ""
+    @State private var className = "" {
+        didSet {
+            self.className = self.className.lowercased()
+        }
+    }
     
     @State private var showingAlert = false
     @State private var alertTitle = ""

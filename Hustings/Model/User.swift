@@ -43,7 +43,7 @@ class User: ObservableObject, Identifiable {
         return classID
     }
     
-    func updateClassID(newClassID: String) {
+    func updateClassID(newClassID: String?) {
         self.classID = newClassID
     }
     

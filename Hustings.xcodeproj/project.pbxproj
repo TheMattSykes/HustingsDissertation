@@ -13,7 +13,6 @@
 		C90857E124325F17002F3DAF /* StoreSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90857E024325F17002F3DAF /* StoreSession.swift */; };
 		C92D8427243FEE0400159C7D /* MainTeacherClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */; };
 		C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */; };
-		C93109692405EE9A00EAE2E1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109682405EE9A00EAE2E1 /* DashboardView.swift */; };
 		C9465B5B2440D58900A99AC8 /* UserListTeacherClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9465B5A2440D58900A99AC8 /* UserListTeacherClassView.swift */; };
 		C9465B602440D64100A99AC8 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9465B5F2440D64100A99AC8 /* ClassView.swift */; };
 		C9669985243B8A36008C5383 /* NewUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9669984243B8A36008C5383 /* NewUserInfo.swift */; };
@@ -27,6 +26,7 @@
 		C97582D72417207C00A17B62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C97582D62417207C00A17B62 /* GoogleService-Info.plist */; };
 		C979DBD8243AA679007E5692 /* ResetPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979DBD7243AA679007E5692 /* ResetPasswordScreen.swift */; };
 		C9AF44142418224800251513 /* LoadTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF44132418224800251513 /* LoadTopics.swift */; };
+		C9B4B42D244683DC00C7A80D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4B42C244683DC00C7A80D /* DashboardView.swift */; };
 		C9CCBB5B2431095800A835F3 /* LearnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCBB5A2431095800A835F3 /* LearnState.swift */; };
 		C9DACACF2445335C0079D807 /* RequestMadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DACACE2445335C0079D807 /* RequestMadeView.swift */; };
 		C9DACAD1244541110079D807 /* MainStudentClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DACAD0244541110079D807 /* MainStudentClassView.swift */; };
@@ -51,7 +51,6 @@
 		E49F399B2408362500819C67 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F399A2408362500819C67 /* AccountView.swift */; };
 		E4B4C33A240597BE002669FF /* LogoTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C339240597BE002669FF /* LogoTitleBar.swift */; };
 		E4B4C33C2405C8CE002669FF /* LogInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C33B2405C8CE002669FF /* LogInScreen.swift */; };
-		E4B4C3402405CA2D002669FF /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */; };
 		E4B4C3432405CB4B002669FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4C3422405CB4B002669FF /* User.swift */; };
 		E4D96245240987B6005C7F6A /* ProvisionalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D96244240987B6005C7F6A /* ProvisionalList.swift */; };
 		E4F87FC92409371E003A423C /* PrimaryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F87FC82409371E003A423C /* PrimaryTabView.swift */; };
@@ -86,7 +85,6 @@
 		C90857E024325F17002F3DAF /* StoreSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSession.swift; sourceTree = "<group>"; };
 		C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTeacherClassView.swift; sourceTree = "<group>"; };
 		C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOptionsView.swift; sourceTree = "<group>"; };
-		C93109682405EE9A00EAE2E1 /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hustings.entitlements; sourceTree = "<group>"; };
 		C9465B5A2440D58900A99AC8 /* UserListTeacherClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTeacherClassView.swift; sourceTree = "<group>"; };
 		C9465B5F2440D64100A99AC8 /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
@@ -101,6 +99,7 @@
 		C97582D62417207C00A17B62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C979DBD7243AA679007E5692 /* ResetPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordScreen.swift; sourceTree = "<group>"; };
 		C9AF44132418224800251513 /* LoadTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTopics.swift; sourceTree = "<group>"; };
+		C9B4B42C244683DC00C7A80D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C9CCBB5A2431095800A835F3 /* LearnState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnState.swift; sourceTree = "<group>"; };
 		C9DACACE2445335C0079D807 /* RequestMadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMadeView.swift; sourceTree = "<group>"; };
 		C9DACAD0244541110079D807 /* MainStudentClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStudentClassView.swift; sourceTree = "<group>"; };
@@ -131,7 +130,6 @@
 		E49F399A2408362500819C67 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E4B4C339240597BE002669FF /* LogoTitleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoTitleBar.swift; sourceTree = "<group>"; };
 		E4B4C33B2405C8CE002669FF /* LogInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreen.swift; sourceTree = "<group>"; };
-		E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		E4B4C3422405CB4B002669FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E4D96244240987B6005C7F6A /* ProvisionalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisionalList.swift; sourceTree = "<group>"; };
 		E4F87FC82409371E003A423C /* PrimaryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTabView.swift; sourceTree = "<group>"; };
@@ -226,16 +224,26 @@
 				E4010CBD2407EAF600A89E95 /* LearnMenuView.swift */,
 				E41F146F2412F1B500B44DE8 /* InformationView.swift */,
 				E42D2DD024114D1E00DC6B92 /* QuizView.swift */,
+				C9CCBB5A2431095800A835F3 /* LearnState.swift */,
 			);
 			name = LearnMode;
 			path = "New Group1";
 			sourceTree = "<group>";
 		};
+		C9B4B42B244668A700C7A80D /* Debate */ = {
+			isa = PBXGroup;
+			children = (
+				E49F39962408361100819C67 /* DebateView.swift */,
+			);
+			path = Debate;
+			sourceTree = "<group>";
+		};
 		E443D7022415C70700FB3F5D /* old files */ = {
 			isa = PBXGroup;
 			children = (
+				C9AF44132418224800251513 /* LoadTopics.swift */,
+				E4D96244240987B6005C7F6A /* ProvisionalList.swift */,
 				E46067D92412777100A8B751 /* QuestionsView.swift */,
-				C93109682405EE9A00EAE2E1 /* DashboardView.swift */,
 				C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */,
 				E4559F0B240976360009C66C /* TopicView.swift */,
 				E42D2DD82411747000DC6B92 /* LoadQuestions.swift */,
@@ -272,12 +280,11 @@
 				C9465B612440D68300A99AC8 /* Authentication */,
 				C9465B622440D6DD00A99AC8 /* LearnMode */,
 				C9465B5C2440D5AC00A99AC8 /* Class */,
+				C9B4B42B244668A700C7A80D /* Debate */,
 				E49E473424035090004E818B /* ContentView.swift */,
 				E4F87FC82409371E003A423C /* PrimaryTabView.swift */,
-				C9CCBB5A2431095800A835F3 /* LearnState.swift */,
-				C9AF44132418224800251513 /* LoadTopics.swift */,
-				E4D96244240987B6005C7F6A /* ProvisionalList.swift */,
 				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
+				C9B4B42C244683DC00C7A80D /* DashboardView.swift */,
 				E49F399A2408362500819C67 /* AccountView.swift */,
 				E49E472D24035090004E818B /* AppDelegate.swift */,
 				E49E472F24035090004E818B /* SceneDelegate.swift */,
@@ -288,8 +295,6 @@
 				E49E473E24035092004E818B /* Info.plist */,
 				E49E473124035090004E818B /* Hustings.xcdatamodeld */,
 				E49E473824035092004E818B /* Preview Content */,
-				E4B4C33F2405CA2D002669FF /* SignInWithApple.swift */,
-				E49F39962408361100819C67 /* DebateView.swift */,
 				E443D7022415C70700FB3F5D /* old files */,
 			);
 			path = Hustings;
@@ -596,7 +601,6 @@
 				E4B4C3432405CB4B002669FF /* User.swift in Sources */,
 				E49E473524035090004E818B /* ContentView.swift in Sources */,
 				E42D2DD124114D1E00DC6B92 /* QuizView.swift in Sources */,
-				C93109692405EE9A00EAE2E1 /* DashboardView.swift in Sources */,
 				C9669987243BCF6F008C5383 /* LoadProfileView.swift in Sources */,
 				E4D96245240987B6005C7F6A /* ProvisionalList.swift in Sources */,
 				C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */,
@@ -607,8 +611,8 @@
 				C966998B243BEDDF008C5383 /* JoinClassView.swift in Sources */,
 				C9AF44142418224800251513 /* LoadTopics.swift in Sources */,
 				C9465B5B2440D58900A99AC8 /* UserListTeacherClassView.swift in Sources */,
-				E4B4C3402405CA2D002669FF /* SignInWithApple.swift in Sources */,
 				E4559F0E2409774B0009C66C /* Topic.swift in Sources */,
+				C9B4B42D244683DC00C7A80D /* DashboardView.swift in Sources */,
 				C9DACAD1244541110079D807 /* MainStudentClassView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

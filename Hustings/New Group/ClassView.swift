@@ -54,22 +54,21 @@ struct ClassView: View {
             }
             
             if (self.currentState == .main_student) {
-                Text("Currently joined to class as a student \(currentUser!.getClassID()!)")
+                MainStudentClassView(currentState: $currentState)
             }
             
             if (self.currentState == .request_made) {
-                
+                RequestMadeView(currentUser: $currentUser, currentState: $currentState)
             }
         }.onAppear(
             perform: {
                 self.currentUser = self.session.getSession()
                 
-                if (self.currentUser!.getClassID() == nil) {
-                     self.currentState = .empty
+                if (self.currentUser!.getMadeClassRequest()) {
+                    self.currentState = .request_made
                 } else {
-                    
-                    if (self.currentUser!.getMadeClassRequest()) {
-                        self.currentState = .request_made
+                    if (self.currentUser!.getClassID() == nil) {
+                         self.currentState = .empty
                     } else {
                         let docRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
                          
@@ -88,6 +87,7 @@ struct ClassView: View {
                                 self.alertMessage = "Please try again."
                                 self.currentState = .empty
                             }
+                            
                         }
                     }
                 }

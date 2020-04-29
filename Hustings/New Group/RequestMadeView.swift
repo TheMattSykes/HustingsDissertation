@@ -16,7 +16,7 @@ struct RequestMadeView: View {
     
     @EnvironmentObject var session: StoreSession
     
-    @Binding var currentUser:User
+    @Binding var currentUser:User?
     
     @Binding var currentState:ClassState
     
@@ -43,7 +43,7 @@ struct RequestMadeView: View {
     }
     
     func cancelRequest() {
-        let docRef = self.db.collection("Users").document(currentUser.getUserID()!)
+        let docRef = self.db.collection("Users").document(currentUser!.getUserID()!)
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -52,7 +52,7 @@ struct RequestMadeView: View {
                 if (requestedClassID != nil) {
                     self.updateCancelData(classID: requestedClassID!)
                 } else {
-                    self.db.collection("Users").document(self.currentUser.getUserID()!).updateData([
+                    self.db.collection("Users").document(self.currentUser!.getUserID()!).updateData([
                         "madeClassRequest": false,
                         "requestedClassID": FieldValue.delete()
                     ])
@@ -66,10 +66,10 @@ struct RequestMadeView: View {
     
     func updateCancelData(classID: String) {
         let classDocRef = self.db.collection("Classes").document(classID)
-        let userDocRef = self.db.collection("Users").document(currentUser.getUserID()!)
+        let userDocRef = self.db.collection("Users").document(currentUser!.getUserID()!)
         
         classDocRef.updateData([
-            "requests": FieldValue.arrayRemove([currentUser.getUserID()!])
+            "requests": FieldValue.arrayRemove([currentUser!.getUserID()!])
         ])
         
         userDocRef.updateData([

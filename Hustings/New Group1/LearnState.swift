@@ -28,9 +28,3 @@ enum topicMode {
     case information
     case quiz
 }
-
-//struct LearnState_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LearnState()
-//    }
-//}

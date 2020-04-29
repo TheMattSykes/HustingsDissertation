@@ -24,36 +24,49 @@ struct RequestsView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     
+    @State private var ready = false
+    
     let db = Firestore.firestore()
     
     var body: some View {
         VStack {
-            List {
-                ForEach((self.users), id: \.self.userID) { user in
-                    HStack(spacing: 15) {
-                        Text("\(user.getName() ?? "Name not available")")
-                            .padding(10)
-                        
-                        Spacer()
-                        
-                        Button(
-                              action: {
-                                self.manageRequest(approveRequest: true, id: user.getUserID()!)
-                              },
-                              label: {
-                                Text("Approve")
-                              }
-                          ).fixedSize()
-                          .padding(10)
-                          .frame(width: 100, height: 50)
-                          .background(Color("HustingsGreen"))
-                          .foregroundColor(.white)
-                          .cornerRadius(15)
-                    }
-                }.onDelete(perform: delete) // when user swipes to delete
+            if (ready && self.users.count > 0) {
+                List {
+                    ForEach((self.users), id: \.self.userID) { user in
+                        HStack(spacing: 15) {
+                            Text("\(user.getName() ?? "Name not available")")
+                                .padding(10)
+                            
+                            Spacer()
+                            
+                            Button(
+                                  action: {
+                                    self.manageRequest(approveRequest: true, id: user.getUserID()!)
+                                    self.users.remove(at: self.users.firstIndex(where: {$0.userID == user.userID})!)
+                                  },
+                                  label: {
+                                    Text("Approve")
+                                  }
+                              ).fixedSize()
+                              .padding(10)
+                              .frame(width: 100, height: 50)
+                              .background(Color("HustingsGreen"))
+                              .foregroundColor(.white)
+                              .cornerRadius(15)
+                        }
+                    }.onDelete(perform: delete) // when user swipes to delete
+                }
+            } else {
+                if (ready) {
+                    Text("There are no requests at this time.")
+                } else {
+                    Text("Loading...")
+                }
             }
         }.onAppear(
             perform: {
+                self.ready = false
+                
                 self.currentUser = self.session.getSession()
                 
                 if (self.currentUser == nil) {
@@ -73,6 +86,7 @@ struct RequestsView: View {
                     }
                     
                     self.convertUserIDsToUsers()
+                    print("User count = \(self.users.count)")
                 }
             }
         )
@@ -118,13 +132,12 @@ struct RequestsView: View {
                     let firstName = document.get("firstName") as! String?
                     let lastName = document.get("lastName") as! String?
                     let email = document.get("email") as! String?
-                    let classID = document.get("classID") as! String?
                     
                     print("User information stored")
                 
-                    if (firstName != nil && lastName != nil && email != nil && classID != nil) {
+                    if (firstName != nil && lastName != nil && email != nil) {
                         self.users.append(
-                            User(userID: userID, displayName: "", email: email, firstName: firstName, lastName: lastName, classID: classID)
+                            User(userID: userID, displayName: "", email: email, firstName: firstName, lastName: lastName, classID: nil, classRequest: true)
                         )
                         print("User created")
                     }
@@ -135,6 +148,9 @@ struct RequestsView: View {
                 
             }
         }
+        
+        self.ready = true
+        print("Now ready for requests list")
     }
     
     func delete(at offsets: IndexSet) {

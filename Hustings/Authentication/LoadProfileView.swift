@@ -60,8 +60,10 @@ struct LoadProfileView: View {
                         }
                         
                         if (madeClassRequest == nil) {
+                            print("Class Request Nil.")
                             self.currentUser!.updateMadeClassRequest(madeRequest: false)
                         } else {
+                            print("Class Request: \(madeClassRequest!).")
                             self.currentUser!.updateMadeClassRequest(madeRequest: madeClassRequest!)
                         }
                         
