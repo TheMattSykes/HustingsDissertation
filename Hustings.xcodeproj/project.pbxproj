@@ -13,6 +13,8 @@
 		C90857E124325F17002F3DAF /* StoreSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90857E024325F17002F3DAF /* StoreSession.swift */; };
 		C92D8427243FEE0400159C7D /* MainTeacherClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */; };
 		C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */; };
+		C9352E68245CED960096A36B /* QuizResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9352E67245CED960096A36B /* QuizResultsView.swift */; };
+		C9352E6A245CFBFF0096A36B /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9352E69245CFBFF0096A36B /* Score.swift */; };
 		C9465B5B2440D58900A99AC8 /* UserListTeacherClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9465B5A2440D58900A99AC8 /* UserListTeacherClassView.swift */; };
 		C9465B602440D64100A99AC8 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9465B5F2440D64100A99AC8 /* ClassView.swift */; };
 		C9669985243B8A36008C5383 /* NewUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9669984243B8A36008C5383 /* NewUserInfo.swift */; };
@@ -86,6 +88,8 @@
 		C92D8426243FEE0400159C7D /* MainTeacherClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTeacherClassView.swift; sourceTree = "<group>"; };
 		C93109632405EDB300EAE2E1 /* DashboardOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardOptionsView.swift; sourceTree = "<group>"; };
 		C931096A2405EFBF00EAE2E1 /* Hustings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hustings.entitlements; sourceTree = "<group>"; };
+		C9352E67245CED960096A36B /* QuizResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsView.swift; sourceTree = "<group>"; };
+		C9352E69245CFBFF0096A36B /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		C9465B5A2440D58900A99AC8 /* UserListTeacherClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTeacherClassView.swift; sourceTree = "<group>"; };
 		C9465B5F2440D64100A99AC8 /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
 		C9669984243B8A36008C5383 /* NewUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserInfo.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 				E4F87FC82409371E003A423C /* PrimaryTabView.swift */,
 				E4B4C339240597BE002669FF /* LogoTitleBar.swift */,
 				C9B4B42C244683DC00C7A80D /* DashboardView.swift */,
+				C9352E67245CED960096A36B /* QuizResultsView.swift */,
 				E49F399A2408362500819C67 /* AccountView.swift */,
 				E49E472D24035090004E818B /* AppDelegate.swift */,
 				E49E472F24035090004E818B /* SceneDelegate.swift */,
@@ -332,6 +337,7 @@
 				E4B4C3422405CB4B002669FF /* User.swift */,
 				E42D2DD224116FA200DC6B92 /* Question.swift */,
 				E4559F0D2409774B0009C66C /* Topic.swift */,
+				C9352E69245CFBFF0096A36B /* Score.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -605,10 +611,12 @@
 				E4D96245240987B6005C7F6A /* ProvisionalList.swift in Sources */,
 				C93109642405EDB300EAE2E1 /* DashboardOptionsView.swift in Sources */,
 				C92D8427243FEE0400159C7D /* MainTeacherClassView.swift in Sources */,
+				C9352E68245CED960096A36B /* QuizResultsView.swift in Sources */,
 				E4F87FC92409371E003A423C /* PrimaryTabView.swift in Sources */,
 				E49E473024035090004E818B /* SceneDelegate.swift in Sources */,
 				C90857E124325F17002F3DAF /* StoreSession.swift in Sources */,
 				C966998B243BEDDF008C5383 /* JoinClassView.swift in Sources */,
+				C9352E6A245CFBFF0096A36B /* Score.swift in Sources */,
 				C9AF44142418224800251513 /* LoadTopics.swift in Sources */,
 				C9465B5B2440D58900A99AC8 /* UserListTeacherClassView.swift in Sources */,
 				E4559F0E2409774B0009C66C /* Topic.swift in Sources */,

@@ -13,6 +13,8 @@ import FirebaseDatabase
 import FirebaseFirestore
 
 struct QuizView: View {
+    @EnvironmentObject var session: StoreSession
+    @State var currentUser:User? = nil
     
     @State var topic:PoliticalTopic
     
@@ -56,7 +58,11 @@ struct QuizView: View {
                 Text("You scored \(correctQList.count)/\(listOfQuestions.count)")
             }
         }.onAppear(
-            perform: { self.loadQuestions() }
+            perform: {
+                self.currentUser = self.session.getSession()
+                
+                self.loadQuestions()
+            }
         )
     }
     
@@ -70,6 +76,10 @@ struct QuizView: View {
         }
         
         questionNo += 1
+        
+        if ((questionNo-1) == listOfQuestions.count) {
+            self.addScoreToDatabase()
+        }
     }
     
     func loadQuestions() {
@@ -91,10 +101,31 @@ struct QuizView: View {
             }
         }
     }
+    
+    func addScoreToDatabase() {
+        let userID = self.currentUser!.getUserID()!
+        let docRef = self.db.collection("Users/\(userID)/Results").document(self.topic.getID())
+        let newScore = Int((Double(self.correctQList.count) / Double(self.listOfQuestions.count)) * 100)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, !document.exists {
+                docRef.setData([
+                    "name": self.topic.getName(),
+                    "score": newScore
+                ])
+            }
+            
+            if let document = document, document.exists {
+                let currentScore:Int? = document.get("score") as! Int?
+                
+                if (currentScore != nil) {
+                    if (newScore > currentScore!) {
+                        docRef.updateData([
+                            "score": newScore
+                        ])
+                    }
+                }
+            }
+        }
+    }
 }
-
-//struct QuizView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        QuizView()
-//    }
-//}

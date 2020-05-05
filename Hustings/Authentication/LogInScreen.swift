@@ -33,6 +33,9 @@ struct LogInScreen: View {
                 .padding(20)
             
             TextField("Email", text: $email)
+                .keyboardType(.emailAddress)
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
                 .padding(20)
                 .frame(minWidth: 250, maxWidth: 350)
                 .overlay(
@@ -40,16 +43,14 @@ struct LogInScreen: View {
                         .stroke(Color("HustingsGreen"), lineWidth: 2)
                 )
             SecureField("Password", text: $password)
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
                 .padding(20)
                 .frame(minWidth: 250, maxWidth: 350)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("HustingsGreen"), lineWidth: 2)
                 )
-            
-            if (err) {
-                Text("")
-            }
             
             HStack(spacing: 5) {
                 Button(
