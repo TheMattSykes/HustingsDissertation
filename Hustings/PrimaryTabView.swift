@@ -28,7 +28,7 @@ struct PrimaryTabView: View {
                         Text("Learn")
                     }
                 
-                Text("Debate Mode")
+                DebateView()
                     .tabItem {
                         Image(systemName: "exclamationmark.bubble")
                         Text("Debate")

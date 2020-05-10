@@ -1,6 +1,0 @@
-framework module Pods_Hustings_HustingsUITests {
-  umbrella header "Pods-Hustings-HustingsUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

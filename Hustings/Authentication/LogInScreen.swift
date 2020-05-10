@@ -67,7 +67,7 @@ struct LogInScreen: View {
                                 self.email = ""
                                 self.password = ""
                             } else {
-                                print("Error occured while logging in.")
+                                print("Error occured while logging in. \(error)")
                                 self.err = true
                                 
                                 self.showingAlert = true
@@ -98,12 +98,12 @@ struct LogInScreen: View {
                         self.session.signUp(email: self.email, password: self.password) { (result, error) in
                             self.load = false
                             
+                            // If no errors present
                             if error == nil {
-                                print("Created new account with no errors.")
                                 self.email = ""
                                 self.password = ""
                             } else {
-                                print("Error occured while signing up.")
+                                print("Error occured while signing up.") // debug
                                 self.err = true
                                 
                                 self.showingAlert = true

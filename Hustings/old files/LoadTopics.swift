@@ -8,8 +8,8 @@
 
 import Foundation
 import Firebase
-import FirebaseDatabase
-import FirebaseFirestore
+//import FirebaseDatabase
+//import FirebaseFirestore
 
 class LoadTopics {
     

@@ -9,8 +9,8 @@
 import SwiftUI
 import Foundation
 import Firebase
-import FirebaseDatabase
-import FirebaseFirestore
+//import FirebaseDatabase
+//import FirebaseFirestore
 
 struct QuizView: View {
     @EnvironmentObject var session: StoreSession

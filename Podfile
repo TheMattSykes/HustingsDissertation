@@ -3,7 +3,7 @@
 
 target 'Hustings' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  # use_frameworks!
 
   # Pods for Hustings
 
@@ -15,8 +15,9 @@ target 'Hustings' do
   target 'HustingsUITests' do
     # Pods for testing
   end
-
-  pod 'Firebase/Core'
+  
+  # pod 'Firebase/Core'
+  pod 'FirebaseCore'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
