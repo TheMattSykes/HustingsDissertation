@@ -33,7 +33,7 @@ struct MainTeacherDebateView: View {
             
             Button (
                 action: {
-                    self.currentState = .debate_list
+                    self.currentState = .debate_list_teacher
                 },
                 label: {
                     Text("My Debates")

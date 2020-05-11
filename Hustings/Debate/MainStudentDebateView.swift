@@ -18,7 +18,7 @@ struct MainStudentDebateView: View {
         VStack(spacing: 15) {
             Button (
                 action: {
-                    self.currentState = .debate_list
+                    self.currentState = .debate_list_student
                 },
                 label: {
                     Text("My Debates")

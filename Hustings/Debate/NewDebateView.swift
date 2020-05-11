@@ -18,6 +18,9 @@ struct NewDebateView: View {
     
     @Binding var currentState:DebateState
     
+    @State var userIDList:[String]
+    @State var shuffledUserList = [String]()
+    
     @State var currentUser:User?
     
     @State private var debateName = "" {
@@ -51,10 +54,13 @@ struct NewDebateView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("HustingsGreen"), lineWidth: 2)
                 )
+            
+            Text("Debate sides are randomly assigned.")
+            
             HStack(spacing: 5) {
                 Button(
                     action: {
-                        self.createNewDebate()
+                        self.assignSides()
                     },
                     label: {
                        Text("Create Debate")
@@ -93,7 +99,7 @@ struct NewDebateView: View {
         )
     }
     
-    func createNewDebate() {
+    func createNewDebate(forList:[String], againstList:[String]) {
         
         let debateDocRef = self.db.collection("Classes/\(currentUser!.getClassID()!)/Debates").document(self.debateName)
         
@@ -102,8 +108,8 @@ struct NewDebateView: View {
                 if let document = document, !document.exists {
                     debateDocRef.setData ([
                         "topic": self.debateQuestion,
-                        "for": [String](),
-                        "against": [String](),
+                        "for": forList,
+                        "against": againstList,
                         "messages": [String]()
                     ]) { err in
                         if let err = err {
@@ -116,6 +122,12 @@ struct NewDebateView: View {
                             print("Document updated.")
                         }
                     }
+                    
+                    self.showingAlert = true
+                    self.alertTitle = "Created New Debate"
+                    self.alertMessage = "Successfully created a new debate."
+                    
+                    self.currentState = .teacher_view
                 } else {
                     self.showingAlert = true
                     self.alertTitle = "Debate Already Exists"
@@ -126,6 +138,26 @@ struct NewDebateView: View {
             self.showingAlert = true
             self.alertTitle = "Error Creating Debate"
             self.alertMessage = "Please enter a debate question."
+        }
+    }
+    
+    func assignSides() {
+        if (self.userIDList.count > 2) {
+            self.shuffledUserList = self.userIDList.shuffled()
+            
+            // Remove class manager from list
+            self.shuffledUserList.removeAll {$0 == self.currentUser!.getUserID()!}
+            
+            let length = self.shuffledUserList.count
+            
+            let forArray:[String] = Array(shuffledUserList[0..<(length/2)])
+            let againstArray:[String] = Array(shuffledUserList[(length/2)..<length])
+            
+            self.createNewDebate(forList: forArray, againstList: againstArray)
+        } else {
+            self.showingAlert = true
+            self.alertTitle = "Error Creating Debate"
+            self.alertMessage = "Not enough members in class."
         }
     }
 }

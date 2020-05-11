@@ -31,6 +31,10 @@
 		C98482712467837E0056FC7E /* NewDebateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98482702467837E0056FC7E /* NewDebateView.swift */; };
 		C9AF44142418224800251513 /* LoadTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF44132418224800251513 /* LoadTopics.swift */; };
 		C9B4B42D244683DC00C7A80D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4B42C244683DC00C7A80D /* DashboardView.swift */; };
+		C9BA4C2E24686AB5009EF9D7 /* AssignSidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA4C2D24686AB5009EF9D7 /* AssignSidesView.swift */; };
+		C9BA4C302468D538009EF9D7 /* DebateListTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA4C2F2468D538009EF9D7 /* DebateListTeacherView.swift */; };
+		C9BA4C322468DED4009EF9D7 /* DebateMessageViewTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA4C312468DED4009EF9D7 /* DebateMessageViewTeacher.swift */; };
+		C9BA4C342468E042009EF9D7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA4C332468E042009EF9D7 /* Message.swift */; };
 		C9CCBB5B2431095800A835F3 /* LearnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCBB5A2431095800A835F3 /* LearnState.swift */; };
 		C9DACACF2445335C0079D807 /* RequestMadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DACACE2445335C0079D807 /* RequestMadeView.swift */; };
 		C9DACAD1244541110079D807 /* MainStudentClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DACAD0244541110079D807 /* MainStudentClassView.swift */; };
@@ -109,6 +113,10 @@
 		C98482702467837E0056FC7E /* NewDebateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDebateView.swift; sourceTree = "<group>"; };
 		C9AF44132418224800251513 /* LoadTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTopics.swift; sourceTree = "<group>"; };
 		C9B4B42C244683DC00C7A80D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C9BA4C2D24686AB5009EF9D7 /* AssignSidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignSidesView.swift; sourceTree = "<group>"; };
+		C9BA4C2F2468D538009EF9D7 /* DebateListTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateListTeacherView.swift; sourceTree = "<group>"; };
+		C9BA4C312468DED4009EF9D7 /* DebateMessageViewTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateMessageViewTeacher.swift; sourceTree = "<group>"; };
+		C9BA4C332468E042009EF9D7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C9CCBB5A2431095800A835F3 /* LearnState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnState.swift; sourceTree = "<group>"; };
 		C9DACACE2445335C0079D807 /* RequestMadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMadeView.swift; sourceTree = "<group>"; };
 		C9DACAD0244541110079D807 /* MainStudentClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStudentClassView.swift; sourceTree = "<group>"; };
@@ -247,6 +255,9 @@
 				C984826C24676FDC0056FC7E /* MainTeacherDebateView.swift */,
 				C984826E24677E620056FC7E /* MainStudentDebateView.swift */,
 				C98482702467837E0056FC7E /* NewDebateView.swift */,
+				C9BA4C2D24686AB5009EF9D7 /* AssignSidesView.swift */,
+				C9BA4C2F2468D538009EF9D7 /* DebateListTeacherView.swift */,
+				C9BA4C312468DED4009EF9D7 /* DebateMessageViewTeacher.swift */,
 			);
 			path = Debate;
 			sourceTree = "<group>";
@@ -347,6 +358,7 @@
 				E42D2DD224116FA200DC6B92 /* Question.swift */,
 				E4559F0D2409774B0009C66C /* Topic.swift */,
 				C9352E69245CFBFF0096A36B /* Score.swift */,
+				C9BA4C332468E042009EF9D7 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -591,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA4C2E24686AB5009EF9D7 /* AssignSidesView.swift in Sources */,
 				E4B4C33A240597BE002669FF /* LogoTitleBar.swift in Sources */,
 				C9669985243B8A36008C5383 /* NewUserInfo.swift in Sources */,
 				E4B4C33C2405C8CE002669FF /* LogInScreen.swift in Sources */,
@@ -606,9 +619,11 @@
 				E4559F0C240976360009C66C /* TopicView.swift in Sources */,
 				E42D2DD324116FA200DC6B92 /* Question.swift in Sources */,
 				C979DBD8243AA679007E5692 /* ResetPasswordScreen.swift in Sources */,
+				C9BA4C322468DED4009EF9D7 /* DebateMessageViewTeacher.swift in Sources */,
 				C9DACACF2445335C0079D807 /* RequestMadeView.swift in Sources */,
 				C984826D24676FDC0056FC7E /* MainTeacherDebateView.swift in Sources */,
 				E49F399B2408362500819C67 /* AccountView.swift in Sources */,
+				C9BA4C302468D538009EF9D7 /* DebateListTeacherView.swift in Sources */,
 				C96B5CA82443D21700D243A3 /* ConvertUserList.swift in Sources */,
 				C96B5CA62443B21300D243A3 /* RequestsView.swift in Sources */,
 				E49E472E24035090004E818B /* AppDelegate.swift in Sources */,
@@ -632,6 +647,7 @@
 				C9AF44142418224800251513 /* LoadTopics.swift in Sources */,
 				C9465B5B2440D58900A99AC8 /* UserListTeacherClassView.swift in Sources */,
 				E4559F0E2409774B0009C66C /* Topic.swift in Sources */,
+				C9BA4C342468E042009EF9D7 /* Message.swift in Sources */,
 				C9B4B42D244683DC00C7A80D /* DashboardView.swift in Sources */,
 				C9DACAD1244541110079D807 /* MainStudentClassView.swift in Sources */,
 			);

@@ -16,6 +16,7 @@ class User: ObservableObject, Identifiable {
     @Published var lastName: String?
     @Published var classID: String?
     @Published var madeClassRequest: Bool
+    @Published var side:Side?
     
     func getUserID() -> String? {
         return userID ?? nil
@@ -59,6 +60,14 @@ class User: ObservableObject, Identifiable {
         return email ?? "Error retrieving email."
     }
     
+    func getSide() -> Side? {
+        return side
+    }
+    
+    func setSide(side:Side) {
+        self.side = side
+    }
+    
     init(userID: String?, displayName: String?, email:String?) {
         self.userID = userID
         self.displayName = displayName
@@ -75,4 +84,9 @@ class User: ObservableObject, Identifiable {
         self.classID = classID
         self.madeClassRequest = classRequest
     }
+}
+
+enum Side {
+    case For
+    case Against
 }
