@@ -31,10 +31,14 @@ struct UserListTeacherClassView: View {
     var body: some View {
         VStack {
             if (self.teacherView == .list) {
-                List {
-                    ForEach((self.users), id: \.self.userID) { user in
-                        Text("\(user.getName() ?? "Name not available")")
-                    }.onDelete(perform: delete) // when user swipes to delete
+                NavigationView {
+                    List {
+                        ForEach((self.users), id: \.self.userID) { user in
+                            NavigationLink(destination: TeacherViewScoresView(user: user)) {
+                                Text("\(user.getName() ?? "Name not available")")
+                            }
+                        }.onDelete(perform: delete) // when user swipes to delete
+                    }
                 }
             } else {
                 

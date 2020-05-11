@@ -82,9 +82,11 @@ struct ClassView: View {
                                     self.currentState = .main_student
                                 }
                             } else {
+                                self.leaveClass()
+                                
                                 self.showingAlert = true
                                 self.alertTitle = "Error Locating Class"
-                                self.alertMessage = "Please try again."
+                                self.alertMessage = "The class associated with your profile could not be found. Your associated class information has been deleted."
                                 self.currentState = .empty
                             }
                             
@@ -93,6 +95,23 @@ struct ClassView: View {
                 }
             }
         )
+    }
+    
+    func leaveClass() {
+        let docRef = self.db.collection("Users").document(self.currentUser!.getUserID()!)
+        
+        // Push to database
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                docRef.updateData([
+                    "classID": FieldValue.delete()
+                ])
+            } else {
+                self.showingAlert = true
+                self.alertTitle = "Unable to locate user data"
+                self.alertMessage = "Please try again later."
+            }
+        }
     }
 }
 

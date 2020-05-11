@@ -9,8 +9,6 @@
 import SwiftUI
 import Foundation
 import Firebase
-//import FirebaseDatabase
-//import FirebaseFirestore
 
 
 struct QuizResultsView: View {

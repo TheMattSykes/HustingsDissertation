@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ User Model
+ 
+ This class stores the information associated with a user.
+ */
 class User: ObservableObject, Identifiable {
     @Published var userID: String?
     @Published var email: String?
@@ -18,13 +23,21 @@ class User: ObservableObject, Identifiable {
     @Published var madeClassRequest: Bool
     @Published var side:Side?
     
+    /**
+     Returns the id of the user
+     
+     - returns: id as a String
+     */
     func getUserID() -> String? {
         return userID ?? nil
     }
     
+    /**
+     Returns the full name of the user
+     
+     - returns: Optional string of user's full name
+     */
     func getName() -> String? {
-        print("!!! GETTING NAME \(String(describing: firstName)) \(String(describing: lastName))")
-        
         if (firstName != nil && lastName != nil) {
             return (firstName! + " " + lastName!)
         } else {
@@ -32,6 +45,12 @@ class User: ObservableObject, Identifiable {
         }
     }
     
+    /**
+     Updates the full name of the user
+     
+     - parameter nameFirstName: First name of the user
+     - parameter nameLastName: Last name of the user
+     */
     func updateName(newFirstName: String, newLastName: String) {
         print("Updating name to \(newFirstName) \(newLastName)...")
         self.firstName = newFirstName
@@ -40,30 +59,65 @@ class User: ObservableObject, Identifiable {
         print("Updated name to \(self.firstName ?? "NOT SET") \(self.lastName ?? "NOT SET")...")
     }
     
+    /**
+     Returns the class ID associated with the user
+     
+     - returns: Optional string of user's class ID
+     */
     func getClassID() -> String? {
         return classID
     }
     
+    /**
+     Updates the class ID of the user
+     
+     - parameter nameClassID: Optional string of the new class ID
+     */
     func updateClassID(newClassID: String?) {
         self.classID = newClassID
     }
     
+    /**
+     Returns a Bool denoting whether the user has requested to join a class
+     
+     - returns: Boolean whether a class request has been made
+     */
     func getMadeClassRequest() -> Bool {
         return madeClassRequest
     }
     
+    /**
+     Updates the class ID of the user
+     
+     - parameter madeRequest: Boolean whether the user has requested to join a class
+     */
     func updateMadeClassRequest(madeRequest: Bool) {
         self.madeClassRequest = madeRequest
     }
     
+    /**
+     Function to get the user's email address
+     
+     - returns: String of the user's email address
+     */
     func getEmail() -> String {
         return email ?? "Error retrieving email."
     }
     
+    /**
+     Function to get side of debate user is on
+     
+     - returns: Side enum denoting user's side of debate
+     */
     func getSide() -> Side? {
         return side
     }
     
+    /**
+     Updates the class ID of the user
+     
+     - parameter madeRequest: Boolean whether the user has requested to join a class
+     */
     func setSide(side:Side) {
         self.side = side
     }
@@ -86,7 +140,8 @@ class User: ObservableObject, Identifiable {
     }
 }
 
-enum Side {
+enum Side:String {
     case For
     case Against
+    case Teacher
 }

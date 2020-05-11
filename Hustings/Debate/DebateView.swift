@@ -59,6 +59,10 @@ struct DebateView: View {
                 DebateListTeacherView(currentState: $currentState)
             }
             
+            if (currentState == .student_view) {
+                DebateListStudentView(currentState: $currentState)
+            }
+            
             Spacer()
         }.onAppear(
             perform: {
@@ -86,6 +90,8 @@ struct DebateView: View {
                         }
                         
                     }
+                } else {
+                    self.currentState = .no_class
                 }
             }
         )

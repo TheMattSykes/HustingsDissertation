@@ -1,5 +1,5 @@
 //
-//  DebateMessageViewTeacher.swift
+//  DebateMessageViewStudent.swift
 //  Hustings
 //
 //  Created by Matthew Sykes on 11/05/2020.
@@ -7,10 +7,9 @@
 //
 
 import SwiftUI
-import Foundation
 import Firebase
 
-struct DebateMessageViewTeacher: View {
+struct DebateMessageViewStudent: View {
     @EnvironmentObject var session: StoreSession
 
     @State var currentUser:User? = nil
@@ -24,7 +23,7 @@ struct DebateMessageViewTeacher: View {
     @State var messages:[Message] = [Message]()
     @State var messageList:[String] = [String]()
     @State var forSide:[String] = [String]()
-    @State var isTeacher = true
+    @State var isTeacher = false
     @State var messageColor:Color? = nil
     
     @State var myMessageContent = ""
@@ -88,7 +87,7 @@ struct DebateMessageViewTeacher: View {
                         .frame(maxWidth: .infinity)
                         .background(message.getColor())
                         .padding(5)
-                }.onDelete(perform: delete) // when user swipes to delete
+                }
             }
                 .frame(minHeight: 200)
         }.onAppear(
@@ -100,48 +99,15 @@ struct DebateMessageViewTeacher: View {
         )
     }
     
-    func delete(at offsets: IndexSet) {
-        guard let index = Array(offsets).first else {
-            return
-        }
-        
-        messages.remove(at: index)
-        
-        messages.reverse()
-        
-        var newMessagesList = [String]()
-        
-        for message in messages {
-            let name = message.getUser()
-            let side = message.getSide()
-            let message = message.getMessageContent()
-            
-            let processedMessage = name + "|" + side.rawValue + "|" + message
-            
-            newMessagesList.append(processedMessage)
-        }
-        
-        let docRef = self.db.collection("Classes/\(self.currentUser!.getClassID()!)/Debates").document(self.debateName)
-        
-        // Push to database
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                docRef.updateData([
-                    "messages": newMessagesList
-                ])
-                
-                self.reloadData()
-            } else {
-                self.showingAlert = true
-                self.alertTitle = "Unable to update message debate data"
-                self.alertMessage = "An error occured."
-            }
-        }
-    }
     
     func writeMessageToDatabase() {
         let name = self.currentUser!.getName()!
-        let side = "Teacher"
+        
+        var side = "Against"
+        
+        if (forSide.contains(self.currentUser!.getUserID()!)) {
+            side = "For"
+        }
         
         let processedMessage = name + "|" + side + "|" + self.myMessageContent
         

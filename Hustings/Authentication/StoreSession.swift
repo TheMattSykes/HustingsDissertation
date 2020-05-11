@@ -9,8 +9,6 @@
 import SwiftUI
 import Foundation
 import Firebase
-//import FirebaseDatabase
-//import FirebaseFirestore
 import Combine
 
 class StoreSession: ObservableObject {
@@ -67,6 +65,16 @@ class StoreSession: ObservableObject {
     
     func resetPassword(email: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    func deleteAccount() {
+        Auth.auth().currentUser?.delete { (error) in
+            if let error = error {
+                print("An error occured while deleting the account: \(error)")
+            } else {
+                print("Account deleted!")
+            }
+        }
     }
     
     func unbind() {

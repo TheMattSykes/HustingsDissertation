@@ -9,8 +9,6 @@
 import SwiftUI
 import Foundation
 import Firebase
-//import FirebaseDatabase
-//import FirebaseFirestore
 
 struct MainTeacherClassView: View {
     @EnvironmentObject var session: StoreSession
@@ -22,6 +20,8 @@ struct MainTeacherClassView: View {
     @State private var showingAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
+    
+    @State private var showingDeleteAlert = false
     
     let db = Firestore.firestore()
     
@@ -51,12 +51,18 @@ struct MainTeacherClassView: View {
                 
                 Button(
                     action: {
-                        
+                        self.showingDeleteAlert = true
                     },
                     label: {
                        Text("Delete Class")
                     }
-                ).fixedSize()
+                ).alert(isPresented: $showingDeleteAlert) {
+                    Alert(title: Text("Delete Class"), message: Text("Are you sure you want to delete your class? Your debates will not be deleted. Please make sure you delete your debates first."), primaryButton: .destructive(Text("Delete")) {
+                            self.deleteClass()
+                        }, secondaryButton: .cancel())
+                }
+                    
+                .fixedSize()
                 .padding(10)
                 .frame(width: 180, height: 50)
                 .background(Color.red)
@@ -70,5 +76,9 @@ struct MainTeacherClassView: View {
                 self.currentUser = self.session.getSession()
             }
         )
+    }
+    
+    func deleteClass() {
+        self.db.collection("Classes").document(self.currentUser!.getClassID()!).delete()
     }
 }

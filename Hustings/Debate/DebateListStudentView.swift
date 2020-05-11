@@ -1,5 +1,5 @@
 //
-//  DebateListTeacherView.swift
+//  DebateListStudentView.swift
 //  Hustings
 //
 //  Created by Matthew Sykes on 11/05/2020.
@@ -11,7 +11,7 @@ import Foundation
 import Firebase
 
 
-struct DebateListTeacherView: View {
+struct DebateListStudentView: View {
     @EnvironmentObject var session: StoreSession
 
     @State var currentUser:User? = nil
@@ -31,12 +31,12 @@ struct DebateListTeacherView: View {
                 NavigationView {
                     List {
                         ForEach((self.debateList), id: \.self) { debate in
-                            NavigationLink(destination: DebateMessageViewTeacher(currentState: self.$currentState, debateName: debate)) {
+                            NavigationLink(destination: DebateMessageViewStudent(currentState: self.$currentState, debateName: debate)) {
                                 HStack {
                                     Text(debate)
                                 }.padding(10)
                             }
-                        }.onDelete(perform: delete) // when user swipes to delete
+                        }
                     }
                 }
             } else {
@@ -47,29 +47,21 @@ struct DebateListTeacherView: View {
                 self.currentUser = self.session.getSession()
                 
                 self.debateList.removeAll()
-                self.db.collection("Classes/\(self.currentUser!.getClassID()!)/Debates").getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error retrieving debates: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            self.debateList.append(document.documentID)
+                
+                if (self.currentUser!.getClassID() != nil) {
+                    self.db.collection("Classes/\(self.currentUser!.getClassID()!)/Debates").getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error retrieving debates: \(err)")
+                        } else {
+                            for document in querySnapshot!.documents {
+                                self.debateList.append(document.documentID)
+                            }
                         }
                     }
+                } else {
+                    self.currentState = .no_class
                 }
             }
         )
     }
-    
-    func delete(at offsets: IndexSet) {
-        guard let index = Array(offsets).first else {
-            return
-        }
-        
-        let debateName = debateList[index]
-        
-        debateList.remove(at: index)
-        
-        self.db.collection("Classes/\(self.currentUser!.getClassID()!)/Debates").document(debateName).delete()
-    }
 }
-

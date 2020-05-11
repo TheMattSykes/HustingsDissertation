@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Foundation
+import Firebase
 
 struct AccountView: View {
     
@@ -15,6 +17,8 @@ struct AccountView: View {
     
     @State private var showAlert = false
     @State private var showDeleteAlert = false
+    
+    let db = Firestore.firestore()
     
     var body: some View {
         VStack(spacing: 10) {
@@ -68,8 +72,10 @@ struct AccountView: View {
                     Text("Delete Account")
                     
                 }
-            ).alert(isPresented: self.$showDeleteAlert) {
-                Alert(title: Text("Delete Account"), message: Text("Are you sure you want to delete your account?"), dismissButton: .default(Text("OK")))
+            ).alert(isPresented: $showDeleteAlert) {
+                Alert(title: Text("Delete Account"), message: Text("Are you sure you want to delete your account? This action cannot be undone!"), primaryButton: .destructive(Text("Delete")) {
+                        self.deleteAccount()
+                    }, secondaryButton: .cancel())
             }
                 .fixedSize()
                 .padding(10)
@@ -84,10 +90,10 @@ struct AccountView: View {
             }
         )
     }
-}
-
-struct AccountView_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountView()
+    
+    func deleteAccount() {
+        self.db.collection("Users/").document(self.currentUser!.getUserID()!).delete()
+        
+        self.session.deleteAccount()
     }
 }
