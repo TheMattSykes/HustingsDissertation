@@ -116,7 +116,8 @@ struct DashboardView: View {
     }
     
     func calculateProgress() {
-        self.progressFloat = CGFloat(self.scores.count / self.numberOfTopics)
-        self.progress = Int(self.progressFloat * 100)
+        self.progressFloat = CGFloat(CGFloat(self.scores.count) / CGFloat(self.numberOfTopics))
+        
+        self.progress = Int(self.progressFloat * CGFloat(100))
     }
 }

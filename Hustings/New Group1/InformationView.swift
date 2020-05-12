@@ -49,8 +49,10 @@ struct InformationView: View {
                 Spacer()
             }
             Spacer()
-            Text(topic.getTextData()[paragraphNo])
-                .padding(20)
+            ScrollView {
+                Text(topic.getTextData()[paragraphNo])
+                    .padding(20)
+            }.frame(minHeight: 180)
             Spacer()
             
             HStack(){

@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ PoliticalTopic
+ 
+ Model for storing data associated with a political topic.
+ */
 class PoliticalTopic: ObservableObject {
     @Published var id:String
     @Published var name:String

@@ -9,8 +9,6 @@
 import SwiftUI
 import Foundation
 import Firebase
-//import FirebaseDatabase
-//import FirebaseFirestore
 
 struct QuizView: View {
     @EnvironmentObject var session: StoreSession
@@ -38,22 +36,24 @@ struct QuizView: View {
                 Text("\(listOfQuestions[questionNo-1].questionText)")
                     .padding(standardPadding)
                 
-                VStack(spacing: 15) {
-                    ForEach((0..<self.listOfQuestions[questionNo-1].answers.count), id: \.self) { index in
-                        Button (
-                            action: {
-                                self.answerButton(buttonNo: index)
-                            },
-                            label: { Text(self.listOfQuestions[self.questionNo-1].answers[index]).fontWeight(.bold) }
-                        )
-                            .fixedSize()
-                            .padding(self.standardPadding)
-                            .frame(width: 260, height: 50)
-                            .background(Color("HustingsGreen"))
-                            .foregroundColor(.white)
-                            .cornerRadius(15)
+                ScrollView {
+                    VStack(spacing: 15) {
+                        ForEach((0..<self.listOfQuestions[questionNo-1].answers.count), id: \.self) { index in
+                            Button (
+                                action: {
+                                    self.answerButton(buttonNo: index)
+                                },
+                                label: { Text(self.listOfQuestions[self.questionNo-1].answers[index]).fontWeight(.bold) }
+                            )
+                                .fixedSize()
+                                .padding(self.standardPadding)
+                                .frame(width: 260, height: 50)
+                                .background(Color("HustingsGreen"))
+                                .foregroundColor(.white)
+                                .cornerRadius(15)
+                        }
                     }
-                }
+                }.frame(minHeight: 230)
             } else {
                 Text("You scored \(correctQList.count)/\(listOfQuestions.count)")
             }

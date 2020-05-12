@@ -28,6 +28,8 @@ struct DebateMessageViewStudent: View {
     
     @State var myMessageContent = ""
     
+    @State var mySide:String = ""
+    
     @State private var showingAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -35,10 +37,10 @@ struct DebateMessageViewStudent: View {
     let db = Firestore.firestore()
     
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 7) {
             HStack {
                 TextField("My Message", text: $myMessageContent)
-                    .padding(20)
+                    .padding(15)
                     .frame(minWidth: 250, maxWidth: 250)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
@@ -53,7 +55,7 @@ struct DebateMessageViewStudent: View {
                     label: { Image(systemName: "paperplane.fill") }
                 )
                     .fixedSize()
-                    .padding(10)
+                    .padding(5)
                     .frame(width: 50, height: 50)
                     .background(Color("HustingsGreen"))
                     .foregroundColor(.white)
@@ -67,14 +69,14 @@ struct DebateMessageViewStudent: View {
                     label: { Image(systemName: "arrow.counterclockwise") }
                 )
                     .fixedSize()
-                    .padding(10)
+                    .padding(5)
                     .frame(width: 50, height: 50)
                     .background(Color("HustingsGreen"))
                     .foregroundColor(.white)
                     .cornerRadius(15)
             }
             
-            Text("Question: \(question)")
+            Text("Question: \(question) | Side: \(mySide)")
             
             List {
                 ForEach((self.messages), id: \.self.id) { message in
@@ -89,7 +91,7 @@ struct DebateMessageViewStudent: View {
                         .padding(5)
                 }
             }
-                .frame(minHeight: 200)
+                .frame(minHeight: 180)
         }.onAppear(
             perform: {
                 self.currentUser = self.session.getSession()
@@ -144,6 +146,16 @@ struct DebateMessageViewStudent: View {
                 self.question = document.get("topic") as? String ?? ""
                 
                 self.messages = self.messageConverter.convertMessages(messageList: self.messageList)
+                
+                if (self.currentUser!.getUserID() != nil) {
+                    if(self.forSide.contains(self.currentUser!.getUserID()!)) {
+                        self.mySide = "FOR"
+                    } else {
+                        self.mySide = "AGAINST"
+                    }
+                } else {
+                    self.mySide = "ERROR"
+                }
             } else {
                 print("Error locating debate content")
             }

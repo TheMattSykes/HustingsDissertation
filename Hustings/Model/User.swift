@@ -80,7 +80,7 @@ class User: ObservableObject, Identifiable {
     /**
      Returns a Bool denoting whether the user has requested to join a class
      
-     - returns: Boolean whether a class request has been made
+     - returns: Boolean: Whether a class request has been made
      */
     func getMadeClassRequest() -> Bool {
         return madeClassRequest
@@ -89,7 +89,7 @@ class User: ObservableObject, Identifiable {
     /**
      Updates the class ID of the user
      
-     - parameter madeRequest: Boolean whether the user has requested to join a class
+     - parameter madeRequest: Boolean: Whether the user has requested to join a class
      */
     func updateMadeClassRequest(madeRequest: Bool) {
         self.madeClassRequest = madeRequest
@@ -116,12 +116,15 @@ class User: ObservableObject, Identifiable {
     /**
      Updates the class ID of the user
      
-     - parameter madeRequest: Boolean whether the user has requested to join a class
+     - parameter side: Boolean whether the user has requested to join a class
      */
     func setSide(side:Side) {
         self.side = side
     }
     
+    /**
+     Initialiser (When user selects 'Create Account' or profile is not set)
+     */
     init(userID: String?, displayName: String?, email:String?) {
         self.userID = userID
         self.displayName = displayName
@@ -129,6 +132,9 @@ class User: ObservableObject, Identifiable {
         self.madeClassRequest = false
     }
     
+    /**
+     Initialiser (When user information exists or profile is updated)
+     */
     init(userID: String?, displayName: String?, email:String?, firstName:String?, lastName:String?, classID:String?, classRequest: Bool) {
         self.userID = userID
         self.displayName = displayName
@@ -140,6 +146,11 @@ class User: ObservableObject, Identifiable {
     }
 }
 
+/**
+ Side
+ 
+ Denotes which side of the debate a user is on.
+ */
 enum Side:String {
     case For
     case Against

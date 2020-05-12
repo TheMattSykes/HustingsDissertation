@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ Question
+ 
+ Model for storing data associated with a question.
+ */
 struct Question: Identifiable {
     var id:String = UUID().uuidString
     var questionNo:Int
