@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Default view for users who are not members of a class.
+ */
 struct EmptyClassView: View {
     
     @EnvironmentObject var session: StoreSession

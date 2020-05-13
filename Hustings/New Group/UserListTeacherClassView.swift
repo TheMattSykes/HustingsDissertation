@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ View the list of students who are currently in the class.
+ */
 struct UserListTeacherClassView: View {
     @EnvironmentObject var session: StoreSession
     
@@ -71,6 +74,9 @@ struct UserListTeacherClassView: View {
         )
     }
     
+    /**
+     Convert the list of String IDs into User objects, get user information from database.
+     */
     func convertUserIDsToUsers() {
         self.users.removeAll()
         
@@ -105,6 +111,9 @@ struct UserListTeacherClassView: View {
         print("User convertion complete")
     }
     
+    /**
+     Delete a user from the class.
+     */
     func delete(at offsets: IndexSet) {
         guard let index = Array(offsets).first else {
             return

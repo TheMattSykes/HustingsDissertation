@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Join a new class view.
+ */
 struct JoinClassView: View {
     @EnvironmentObject var session: StoreSession
     
@@ -66,6 +69,9 @@ struct JoinClassView: View {
         )
     }
     
+    /**
+     Join class and update database.
+     */
     func joinClass() {
         let userID = self.currentUser!.getUserID()!
         let classDocRef = self.db.collection("Classes").document(self.className)
@@ -85,6 +91,9 @@ struct JoinClassView: View {
         }
     }
     
+    /**
+     Update to database to add that the user has requested to join a new class.
+     */
     func updateUserWithRequest() {
         let userID = self.currentUser!.getUserID()!
         let userDocRef = self.db.collection("Users").document(userID)

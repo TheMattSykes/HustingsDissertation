@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ View when a user resets their password
+ */
 struct ResetPasswordScreen: View {
     
     @EnvironmentObject var session: StoreSession
@@ -48,6 +51,7 @@ struct ResetPasswordScreen: View {
                      self.err = false
                      self.load = true
                      
+                     // Reset password
                      self.session.resetPassword(email: self.email) { (result, error) in
                          self.load = false
                          

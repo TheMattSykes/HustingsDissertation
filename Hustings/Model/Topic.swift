@@ -20,14 +20,29 @@ class PoliticalTopic: ObservableObject {
     @Published var textData:[String]?
     @Published var quiz:[Question]?
     
+    /**
+     Returns the id of the topic
+     
+     - returns: id as a String
+     */
     func getID() -> String {
         return id
     }
     
+    /**
+     Returns the name of the topic
+     
+     - returns: name as a String
+     */
     func getName() -> String {
         return name
     }
     
+    /**
+     Returns the text data of the topic
+     
+     - returns: text data (paragraphs) as a String array
+     */
     func getTextData() -> [String] {
         return textData!
     }

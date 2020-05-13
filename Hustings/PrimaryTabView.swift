@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+/**
+ Primary navigation view.
+ 
+ View of tabbed options at the bottom of the screen.
+ */
 struct PrimaryTabView: View {
     init() {
         UITabBar.appearance().backgroundColor = UIColor(displayP3Red: 0.419, green: 0.725, blue: 0.215, alpha: 1.0)

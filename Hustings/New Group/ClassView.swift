@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Primary class view, determines which view the system should output.
+ */
 struct ClassView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -37,6 +40,7 @@ struct ClassView: View {
                 Alert(title: Text(self.alertTitle), message: Text(self.alertMessage), dismissButton: .default(Text("OK")))
             }
             
+            // Determine which view to present
             if (self.currentState == .empty) {
                 EmptyClassView(currentUser: $currentUser, currentState: $currentState)
             }
@@ -82,6 +86,7 @@ struct ClassView: View {
                                     self.currentState = .main_student
                                 }
                             } else {
+                                // if class no longer exists
                                 self.leaveClass()
                                 
                                 self.showingAlert = true
@@ -97,6 +102,9 @@ struct ClassView: View {
         )
     }
     
+    /**
+     Delete class information from user, if the user requests to leave the class
+     */
     func leaveClass() {
         let docRef = self.db.collection("Users").document(self.currentUser!.getUserID()!)
         
@@ -115,6 +123,9 @@ struct ClassView: View {
     }
 }
 
+/**
+ enum to determine current class view.
+ */
 enum ClassState {
     case empty
     case new

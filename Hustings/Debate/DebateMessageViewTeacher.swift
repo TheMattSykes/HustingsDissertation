@@ -10,6 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ View when inside a debate for teachers.
+ */
 struct DebateMessageViewTeacher: View {
     @EnvironmentObject var session: StoreSession
 
@@ -100,6 +103,9 @@ struct DebateMessageViewTeacher: View {
         )
     }
     
+    /**
+     Delete a message.
+     */
     func delete(at offsets: IndexSet) {
         guard let index = Array(offsets).first else {
             return
@@ -139,6 +145,9 @@ struct DebateMessageViewTeacher: View {
         }
     }
     
+    /**
+     Write a new message and format for storage in database.
+     */
     func writeMessageToDatabase() {
         let name = self.currentUser!.getName()!
         let side = "Teacher"
@@ -165,6 +174,9 @@ struct DebateMessageViewTeacher: View {
         }
     }
     
+    /**
+     Download database information.
+     */
     func reloadData() {
         self.messages.removeAll()
         self.forSide.removeAll()

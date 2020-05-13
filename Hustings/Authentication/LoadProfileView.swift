@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Loading screen when user successfully logs in. Gets profile information from the database.
+ */
 struct LoadProfileView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -39,6 +42,7 @@ struct LoadProfileView: View {
                 
                 let docRef = self.db.collection("Users").document(self.currentUser!.getUserID()!)
                 
+                // Get user data
                 docRef.getDocument { (document, error) in
                     print("Attempting to get user's name...")
                     if let document = document, document.exists {

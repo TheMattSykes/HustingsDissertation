@@ -12,6 +12,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ View when creating a new debate.
+ */
 struct NewDebateView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -99,6 +102,12 @@ struct NewDebateView: View {
         )
     }
     
+    /**
+     Create a new debate.
+     
+     - parameter forList: String array of all users who are on the for side.
+     - parameter againstList: String array of all users who are on the against side.
+     */
     func createNewDebate(forList:[String], againstList:[String]) {
         
         let debateDocRef = self.db.collection("Classes/\(currentUser!.getClassID()!)/Debates").document(self.debateName)
@@ -141,6 +150,9 @@ struct NewDebateView: View {
         }
     }
     
+    /**
+     Randomly assign the debate sides.
+     */
     func assignSides() {
         if (self.userIDList.count > 2) {
             self.shuffledUserList = self.userIDList.shuffled()

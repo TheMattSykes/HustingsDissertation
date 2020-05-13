@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ Main view for the log in screen.
+ */
 struct LogInScreen: View {
 
     @EnvironmentObject var session: StoreSession
@@ -32,6 +35,7 @@ struct LogInScreen: View {
                 .frame(minWidth: 0, maxWidth: 250)
                 .padding(20)
             
+            // Email field
             TextField("Email", text: $email)
                 .keyboardType(.emailAddress)
                 .disableAutocorrection(true)
@@ -42,6 +46,8 @@ struct LogInScreen: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color("HustingsGreen"), lineWidth: 2)
                 )
+            
+            // Password field
             SecureField("Password", text: $password)
                 .disableAutocorrection(true)
                 .autocapitalization(.none)
@@ -59,6 +65,7 @@ struct LogInScreen: View {
                         self.err = false
                         self.load = true
                         
+                        // log in to account
                         self.session.logIn(email: self.email, password: self.password) { (result, error) in
                             self.load = false
                             
@@ -95,6 +102,7 @@ struct LogInScreen: View {
                         self.err = false
                         self.load = true
                         
+                        // Create a new account
                         self.session.signUp(email: self.email, password: self.password) { (result, error) in
                             self.load = false
                             
@@ -124,6 +132,7 @@ struct LogInScreen: View {
                     .cornerRadius(15)
             }
             
+            // Reset password
             Button(
                 action: {
                     self.passwordReset = true

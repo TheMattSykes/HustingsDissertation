@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ View when creating a new class.
+ */
 struct NewClassView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -83,6 +86,9 @@ struct NewClassView: View {
         )
     }
     
+    /**
+     Create a new class in the database.
+     */
     func createNewClass() {
         
         let classDocRef = self.db.collection("Classes").document(self.className)
@@ -114,6 +120,9 @@ struct NewClassView: View {
         }
     }
     
+    /**
+     Set the user's class information in the database.
+     */
     func setUserClass() {
         print("Setting user class...")
         self.db.collection("Users").document(self.currentUser!.getUserID()!).updateData ([

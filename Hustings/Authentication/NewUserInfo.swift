@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ View for when a user hasn't set their name upon loggining in
+ */
 struct NewUserInfo: View {
     @EnvironmentObject var session: StoreSession
     
@@ -46,6 +49,7 @@ struct NewUserInfo: View {
             Text("Please enter your name below:")
                 .foregroundColor(Color("HustingsGreen"))
             
+            // Text input fields
             TextField("First Name", text: $firstName)
                 .padding(20)
                 .frame(minWidth: 250, maxWidth: 350)
@@ -115,6 +119,11 @@ struct NewUserInfo: View {
         )
     }
     
+    /**
+     Returns whether the name is acceptiable
+     
+     - returns: Bool of whether name is permitted
+     */
     func checkIfName(nameToCheck: String) -> Bool {
         let nameRegex = "^[a-zA-Z]{3,20}$"
         

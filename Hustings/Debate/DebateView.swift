@@ -10,6 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ Primary debate view, determines which other view to present.
+ */
 struct DebateView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -97,6 +100,9 @@ struct DebateView: View {
         )
     }
     
+    /**
+     Get list of users in class from database.
+     */
     func getUserIDList() {
         let docRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
          
@@ -116,6 +122,9 @@ struct DebateView: View {
         }
     }
     
+    /**
+     Convert the list of String IDs into User objects, get user information from database.
+     */
     func convertUserIDsToUsers() {
         self.userList.removeAll()
         
@@ -154,6 +163,9 @@ struct DebateView: View {
     
 }
 
+/**
+ enum to determine current debate view.
+ */
 enum DebateState {
     case no_class
     case teacher_view

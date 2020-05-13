@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+/**
+ Primary view of the application.
+ 
+ Determines other views in use and checks the current session information.
+ */
 struct ContentView: View {
     @EnvironmentObject var session: StoreSession
     @State var passwordReset = false
@@ -42,9 +47,3 @@ struct ContentView: View {
         )
     }
 }
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}

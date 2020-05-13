@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ Store Model
+ 
+ Used to store the information associated with a score.
+ */
 class Score: ObservableObject {
     var id:String
     private var name:String

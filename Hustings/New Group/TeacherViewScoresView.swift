@@ -10,6 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ View for viewing a student's scores.
+ */
 struct TeacherViewScoresView: View {
     @EnvironmentObject var session: StoreSession
     

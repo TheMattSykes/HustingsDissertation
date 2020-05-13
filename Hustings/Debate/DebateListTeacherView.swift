@@ -10,7 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
-
+/**
+ View to list the current debates.
+ */
 struct DebateListTeacherView: View {
     @EnvironmentObject var session: StoreSession
 
@@ -60,6 +62,9 @@ struct DebateListTeacherView: View {
         )
     }
     
+    /**
+     Delete a debate.
+     */
     func delete(at offsets: IndexSet) {
         guard let index = Array(offsets).first else {
             return

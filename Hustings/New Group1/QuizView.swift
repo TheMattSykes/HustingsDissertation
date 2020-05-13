@@ -10,6 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ View at the end of a lesson when the user starts a quiz.
+ */
 struct QuizView: View {
     @EnvironmentObject var session: StoreSession
     @State var currentUser:User? = nil
@@ -66,6 +69,11 @@ struct QuizView: View {
         )
     }
     
+    /**
+     Determines whether the user's answer is correct depending on the button they pressed.
+     
+     - parameter buttonNo: Number of the button the user has pressed
+     */
     func answerButton(buttonNo:Int) {
         let correct = (buttonNo == listOfQuestions[questionNo-1].answer)
         
@@ -82,6 +90,9 @@ struct QuizView: View {
         }
     }
     
+    /**
+     Load the question information from the database.
+     */
     func loadQuestions() {
         self.listOfQuestions.removeAll()
         self.db.collection("Topics/\(topic.getID())/Quiz").getDocuments() { (querySnapshot, err) in
@@ -102,6 +113,9 @@ struct QuizView: View {
         }
     }
     
+    /**
+     At the end of the quiz, upload the new score if it is higher than the existing score or there is no existing score.
+     */
     func addScoreToDatabase() {
         let userID = self.currentUser!.getUserID()!
         let docRef = self.db.collection("Users/\(userID)/Results").document(self.topic.getID())

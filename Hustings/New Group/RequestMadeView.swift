@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Student view when requested to join a new class.
+ */
 struct RequestMadeView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -42,6 +45,9 @@ struct RequestMadeView: View {
         }
     }
     
+    /**
+     Cancel request to join a class.
+     */
     func cancelRequest() {
         let docRef = self.db.collection("Users").document(currentUser!.getUserID()!)
         
@@ -64,6 +70,9 @@ struct RequestMadeView: View {
         }
     }
     
+    /**
+     Update database.
+     */
     func updateCancelData(classID: String) {
         let classDocRef = self.db.collection("Classes").document(classID)
         let userDocRef = self.db.collection("Users").document(currentUser!.getUserID()!)

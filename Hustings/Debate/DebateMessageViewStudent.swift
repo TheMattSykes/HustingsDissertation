@@ -9,6 +9,9 @@
 import SwiftUI
 import Firebase
 
+/**
+ View when inside a debate for students.
+ */
 struct DebateMessageViewStudent: View {
     @EnvironmentObject var session: StoreSession
 
@@ -101,7 +104,9 @@ struct DebateMessageViewStudent: View {
         )
     }
     
-    
+    /**
+     Write a new message and format for storage in database.
+     */
     func writeMessageToDatabase() {
         let name = self.currentUser!.getName()!
         
@@ -133,6 +138,9 @@ struct DebateMessageViewStudent: View {
         }
     }
     
+    /**
+     Download database information.
+     */
     func reloadData() {
         self.messages.removeAll()
         self.forSide.removeAll()

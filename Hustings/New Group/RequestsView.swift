@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ View the list of users who have requested to join the class.
+ */
 struct RequestsView: View {
     @EnvironmentObject var session: StoreSession
     
@@ -92,6 +95,9 @@ struct RequestsView: View {
         )
     }
     
+    /**
+     Approve or reject a request to join the class.
+     */
     func manageRequest(approveRequest:Bool, id:String) {
         let classDocRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
         let userDocRef = self.db.collection("Users").document(id)
@@ -116,7 +122,10 @@ struct RequestsView: View {
             "madeClassRequest": false
         ])
     }
-        
+    
+    /**
+     Convert the list of String IDs into User objects, get user information from database.
+     */
     func convertUserIDsToUsers() {
         
         print("Converting UserIDs to Users")
@@ -153,6 +162,11 @@ struct RequestsView: View {
         print("Now ready for requests list")
     }
     
+    /**
+     Delete a class join request.
+     
+     - parameters offsets: IndexSet of item to be deleted
+     */
     func delete(at offsets: IndexSet) {
         guard let index = Array(offsets).first else {
             return

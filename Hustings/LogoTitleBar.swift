@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ Application title bar with logo.
+ */
 struct LogoTitleBar: View {
     var body: some View {
         VStack(spacing: 0){
@@ -15,9 +18,6 @@ struct LogoTitleBar: View {
                 .fill(Color("HustingsGreen"))
                 .frame(height: 30)
             ZStack {
-//                Rectangle()
-//                    .fill(Color("HustingsGreen"))
-//                    .frame(height: 10)
                 Rectangle()
                     .fill(Color("HustingsGreen"))
                     .frame(height: 90)
@@ -27,7 +27,7 @@ struct LogoTitleBar: View {
                     .scaledToFit()
                     .padding(10)
             )
-        }//.frame(height: 82)
+        }
         .edgesIgnoringSafeArea(.top)
     }
 }

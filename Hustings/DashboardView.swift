@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Dashboard view with user's progress and button for quiz scores.
+ */
 struct DashboardView: View {
     @EnvironmentObject var session: StoreSession
     @State var currentUser:User? = nil
@@ -78,6 +81,9 @@ struct DashboardView: View {
         )
     }
     
+    /**
+     Load scores from database.
+     */
     func loadScores() {
         self.scores.removeAll()
         self.db.collection("Users/\(self.currentUser!.getUserID()!)/Results").getDocuments() { (querySnapshot, err) in
@@ -99,6 +105,9 @@ struct DashboardView: View {
         }
     }
     
+    /**
+     Calculate the number of topics in the database.
+     */
     func calculateNumberOfTopics() {
         self.numberOfTopics = 0
         
@@ -115,6 +124,9 @@ struct DashboardView: View {
         }
     }
     
+    /**
+     Calculate current progress.
+     */
     func calculateProgress() {
         self.progressFloat = CGFloat(CGFloat(self.scores.count) / CGFloat(self.numberOfTopics))
         

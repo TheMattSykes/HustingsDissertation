@@ -12,6 +12,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ Primary view for students inside a class.
+ */
 struct MainStudentClassView: View {
     @EnvironmentObject var session: StoreSession
     
@@ -61,6 +64,9 @@ struct MainStudentClassView: View {
         )
     }
     
+    /**
+     Get teacher name from database.
+     */
     func getTeacherInfo() {
         let classDocRef = self.db.collection("Classes").document(self.currentUser!.getClassID()!)
          
@@ -88,6 +94,9 @@ struct MainStudentClassView: View {
         }
     }
     
+    /**
+     Leave the current class.
+     */
     func leaveClass() {
         let userID = self.currentUser!.getUserID()!
         let classID = self.currentUser!.getClassID()!

@@ -13,6 +13,9 @@ import Firebase
 //import FirebaseDatabase
 //import FirebaseFirestore
 
+/**
+ View of the current list of available lessons.
+ */
 struct LearnMenuView: View {
     
     @State var topics = [PoliticalTopic]()
@@ -31,6 +34,8 @@ struct LearnMenuView: View {
                         .font(.largeTitle)
                         .foregroundColor((Color("HustingsGreen")))
                 }
+                
+                // List available lessons
                 List {
                     ForEach((self.topics), id: \.self.id) { topic in
                         NavigationLink(destination: LearnState(topic: topic)) {
@@ -49,12 +54,14 @@ struct LearnMenuView: View {
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-//            .navigationViewStyle(StackNavigationViewStyle()).padding(0)
         }.onAppear(
             perform: { self.loadTopics() }
         )
     }
     
+    /**
+     Get the topic information from the database.
+     */
     func loadTopics() {
         self.topics.removeAll()
         self.db.collection("Topics").getDocuments() { (querySnapshot, err) in
@@ -74,12 +81,6 @@ struct LearnMenuView: View {
                 }
             }
         }
-    }
-}
-
-struct LearnMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-         LearnMenuView()
     }
 }
 

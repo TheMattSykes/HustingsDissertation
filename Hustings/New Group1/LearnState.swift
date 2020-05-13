@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ View to determine which view the system should use while in lesson mode.
+ */
 struct LearnState: View {
     
     @State var topic:PoliticalTopic
@@ -24,6 +27,9 @@ struct LearnState: View {
     }
 }
 
+/**
+ enum to determine current view.
+ */
 enum topicMode {
     case information
     case quiz

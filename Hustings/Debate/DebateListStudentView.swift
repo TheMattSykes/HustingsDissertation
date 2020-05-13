@@ -10,7 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
-
+/**
+ View a list of debates for students.
+ */
 struct DebateListStudentView: View {
     @EnvironmentObject var session: StoreSession
 

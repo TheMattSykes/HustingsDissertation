@@ -10,7 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
-
+/**
+ View a list of score results.
+ */
 struct QuizResultsView: View {
     @EnvironmentObject var session: StoreSession
     

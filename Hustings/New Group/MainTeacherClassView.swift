@@ -10,6 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ Default view for teachers when accessing the class view.
+ */
 struct MainTeacherClassView: View {
     @EnvironmentObject var session: StoreSession
     
@@ -78,6 +81,9 @@ struct MainTeacherClassView: View {
         )
     }
     
+    /**
+     Delete the class.
+     */
     func deleteClass() {
         self.db.collection("Classes").document(self.currentUser!.getClassID()!).delete()
     }

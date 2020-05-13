@@ -10,6 +10,9 @@ import SwiftUI
 import Foundation
 import Firebase
 
+/**
+ View account information and delete account button.
+ */
 struct AccountView: View {
     
     @EnvironmentObject var session: StoreSession
@@ -91,6 +94,9 @@ struct AccountView: View {
         )
     }
     
+    /**
+     Delete account in database and terminate session.
+     */
     func deleteAccount() {
         self.db.collection("Users/").document(self.currentUser!.getUserID()!).delete()
         

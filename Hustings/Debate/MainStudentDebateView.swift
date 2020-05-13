@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ Default view for students.
+ */
 struct MainStudentDebateView: View {
     
     @EnvironmentObject var session: StoreSession

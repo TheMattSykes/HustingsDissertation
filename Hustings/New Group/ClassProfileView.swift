@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+/**
+ View of class profile.
+ 
+ Not implemented.
+ */
 struct ClassProfileView: View {
     
     @State var user:User

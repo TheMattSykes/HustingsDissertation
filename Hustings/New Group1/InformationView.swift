@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+/**
+ Once inside a topic, this view will display the text paragraphs for that lesson.
+ */
 struct InformationView: View {
     
     @State var topic:PoliticalTopic
@@ -17,7 +20,7 @@ struct InformationView: View {
     
     @Binding var topicViewState:topicMode
     
-    @State var paragraphNo = 0 {
+    @State var paragraphNo = 0 { // didSet determines colour of buttons
         didSet {
             if (paragraphNo <= 0) {
                 prevButtonColor = .black
@@ -95,9 +98,3 @@ struct InformationView: View {
         }
     }
 }
-
-//struct InformationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//       InformationView(topic: ProvisionalList().getProvisionalList()[0], topicViewState: topicMode.information)
-//    }
-//}
